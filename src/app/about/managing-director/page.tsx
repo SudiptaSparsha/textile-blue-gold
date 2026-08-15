@@ -3,7 +3,7 @@
 import PageBanner from "@/components/PageBanner";
 import SectionWrapper, { SectionTitle } from "@/components/SectionWrapper";
 import { GraduationCap, Factory, Zap, HardHat, Palmtree } from "lucide-react";
-import mdPhotoObj from "@/assets/company-data/WhatsApp Image 2026-07-21 at 12,38,16-Picsart-AiImageEnhancer.jpeg";
+import mdPhotoObj from "@/assets/company-data/managing-director-photo.jpeg";
 const mdPhoto = mdPhotoObj.src;
 
 const education = [
@@ -26,11 +26,10 @@ const ManagingDirectorProfile = () => (
     />
     <SectionWrapper>
       <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,380px)_1fr]">
-        <div className="overflow-hidden rounded-lg border border-border shadow-lg">
+        <div className="aspect-[4/5] overflow-hidden rounded-lg border border-border shadow-lg">
           <img
             src={mdPhoto}
             alt="Engr. Akkas Ahmed (Sahed) — Managing Director"
-            loading="lazy"
             className="h-full w-full object-cover"
           />
         </div>

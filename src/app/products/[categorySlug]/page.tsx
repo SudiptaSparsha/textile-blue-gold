@@ -3,10 +3,13 @@
 import { useEffect, useMemo } from "react";
 import { useParams, useRouter, useSearchParams } from "next/navigation";
 
+import Link from "next/link";
 import PageBanner from "@/components/PageBanner";
-import SectionWrapper from "@/components/SectionWrapper";
+import SectionWrapper, { SectionTitle } from "@/components/SectionWrapper";
 import ProductCard from "@/components/ProductCard";
+import ProductSearch from "@/components/ProductSearch";
 import { categories, getProductsByCategory } from "@/data/products";
+import { optionalDevices } from "@/data/optionalDevices";
 import {
   Pagination,
   PaginationContent,
@@ -76,6 +79,9 @@ const ProductListing = () => {
       />
       <SectionWrapper>
         <p className="mb-8 text-center text-muted-foreground">{category.description}</p>
+        <div className="mx-auto mb-10 max-w-xl">
+          <ProductSearch placeholder="Search machines by name..." />
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {pageItems.map((p) => (
             <ProductCard key={p.id} product={p} />
@@ -136,6 +142,36 @@ const ProductListing = () => {
           </Pagination>
         )}
       </SectionWrapper>
+
+      {categorySlug === "embroidery-machines" && (
+        <SectionWrapper alt>
+          <SectionTitle title="Optional Devices" subtitle="Add-on attachments that expand what your embroidery machine can do" />
+          <div className="grid gap-6 grid-cols-2 lg:grid-cols-4">
+            {optionalDevices.map((device) => (
+              <Link
+                key={device.slug}
+                href={`/products/embroidery-machines/optional-devices/${device.slug}`}
+                className="group overflow-hidden rounded-lg border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-md"
+              >
+                <div className="aspect-square overflow-hidden bg-muted">
+                  <img
+                    src={device.image}
+                    alt={device.name}
+                    className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-4">
+                  <h3 className="mb-2 font-semibold text-foreground">{device.name}</h3>
+                  <p className="text-sm text-muted-foreground line-clamp-2">{device.shortDescription}</p>
+                  <span className="mt-3 inline-block text-sm font-medium text-accent transition-colors group-hover:text-accent/80">
+                    View Details →
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </SectionWrapper>
+      )}
     </>
   );
 };

@@ -3,9 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Award, ChevronLeft, ChevronRight, Globe, Headphones, Truck } from "lucide-react";
-import aboutImgObj from "@/assets/about-company.png";
+import aboutImgObj from "@/assets/about-us/Textile office.png";
 const aboutImg = aboutImgObj.src;
 import SectionWrapper, { SectionTitle } from "@/components/SectionWrapper";
+import ProductSearch from "@/components/ProductSearch";
+import ClientPhotoSlider from "@/components/ClientPhotoSlider";
 import { categories } from "@/data/products";
 import heroSlide1 from "@/assets/hero-slider/259666c3-7b6c-466e-ace2-0f1958bd2225.jpg";
 import heroSlide2 from "@/assets/hero-slider/84bf0ba8-f14b-481d-af09-5af3157fd093.jpg";
@@ -110,6 +112,9 @@ const Index = () => {
             <p className="mt-4 text-lg text-primary-foreground/80 md:text-xl">
               Operating with dedication and integrity since 2008. Trusted technical services and industrial machinery for Bangladesh's textile and manufacturing sector.
             </p>
+            <div className="mt-6 max-w-md">
+              <ProductSearch placeholder="Search machines by name..." />
+            </div>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link href="/products" className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-all hover:bg-accent/90 hover:shadow-lg">
                 Explore Catalog <ArrowRight className="h-4 w-4" />
@@ -200,6 +205,12 @@ const Index = () => {
             </div>
           ))}
         </div>
+      </SectionWrapper>
+
+      {/* What Our Clients Say */}
+      <SectionWrapper alt>
+        <SectionTitle title="What Our Clients Say" subtitle="Moments with the factory owners and partners we've worked with across Bangladesh" />
+        <ClientPhotoSlider />
       </SectionWrapper>
 
       {/* CTA */}

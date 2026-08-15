@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { categories } from "@/data/products";
+import ProductSearch from "@/components/ProductSearch";
 
 const navItems = [
   { label: "Home", path: "/", linkPath: "/" },
@@ -53,7 +54,41 @@ const navItems = [
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
   const pathname = usePathname();
+  const searchPanelRef = useRef<HTMLDivElement>(null);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    setSearchOpen(false);
+    setMobileOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSearchOpen(false);
+    };
+    const onClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (
+        searchPanelRef.current &&
+        !searchPanelRef.current.contains(target) &&
+        searchButtonRef.current &&
+        !searchButtonRef.current.contains(target)
+      ) {
+        setSearchOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onClickOutside);
+    };
+  }, [searchOpen]);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -101,15 +136,47 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="rounded-md p-2 lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-1">
+          {/* Search Toggle */}
+          <button
+            ref={searchButtonRef}
+            onClick={() => {
+              setSearchOpen((prev) => !prev);
+              setMobileOpen(false);
+            }}
+            className={`rounded-md p-2 transition-colors hover:bg-muted ${searchOpen ? "text-accent" : "text-foreground"}`}
+            aria-label={searchOpen ? "Close search" : "Search products"}
+          >
+            {searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}
+          </button>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => {
+              setMobileOpen(!mobileOpen);
+              setSearchOpen(false);
+            }}
+            className="rounded-md p-2 lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
+
+      {/* Search Panel */}
+      {searchOpen && (
+        <div ref={searchPanelRef} className="border-t border-border bg-background px-4 py-4 shadow-md">
+          <div className="container">
+            <ProductSearch
+              placeholder="Search machines by name..."
+              size="lg"
+              autoFocus
+              onNavigate={() => setSearchOpen(false)}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Mobile Nav */}
       {mobileOpen && (
