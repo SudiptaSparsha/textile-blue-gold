@@ -3,9 +3,9 @@
 import { CheckCircle2 } from "lucide-react";
 import PageBanner from "@/components/PageBanner";
 import SectionWrapper, { SectionTitle } from "@/components/SectionWrapper";
-import aboutImgObj from "@/assets/about-company.png";
+import aboutImgObj from "@/assets/about-us/Textile office.png";
 const aboutImg = aboutImgObj.src;
-import yonthinCertObj from "@/assets/company-data/WhatsApp Image 2026-08-03 at 13,59,59-Picsart-AiImageEnhancer.jpeg";
+import yonthinCertObj from "@/assets/company-data/yonthin-dealership-certificate.jpeg";
 const yonthinCert = yonthinCertObj.src;
 import lidaCertObj from "@/assets/company-data/Cer.png";
 const lidaCert = lidaCertObj.src;

@@ -40,6 +40,13 @@ import tv4 from "@/assets/knitting-machine/high-speed-terry-velour-circular-knit
 import tv5 from "@/assets/knitting-machine/high-speed-terry-velour-circular-knitting-machine/high-speed-terry-velour-circular-knitting-machine-5.jpg";
 import tv6 from "@/assets/knitting-machine/high-speed-terry-velour-circular-knitting-machine/high-speed-terry-velour-circular-knitting-machine-6.jpg";
 
+import yq1 from "@/assets/knitting-machine/yx-q-flat-knitting-series/yx-q-flat-knitting-series-1.jpg";
+import yq2 from "@/assets/knitting-machine/yx-q-flat-knitting-series/yx-q-flat-knitting-series-2.jpg";
+import yq3 from "@/assets/knitting-machine/yx-q-flat-knitting-series/yx-q-flat-knitting-series-3.jpg";
+import yq4 from "@/assets/knitting-machine/yx-q-flat-knitting-series/yx-q-flat-knitting-series-4.jpg";
+import yq5 from "@/assets/knitting-machine/yx-q-flat-knitting-series/yx-q-flat-knitting-series-5.jpg";
+import yq6 from "@/assets/knitting-machine/yx-q-flat-knitting-series/yx-q-flat-knitting-series-6.jpg";
+
 import type { GalleryImage } from "@/data/embroideryImages";
 
 const toGallery = (name: string, images: { src: string }[]): GalleryImage[] =>
@@ -55,6 +62,7 @@ export const knittingGalleryImages: Record<string, GalleryImage[]> = {
   "three-thread-fleece-knitting": toGallery("High Speed Three-Thread Fleece Knitting Machine", [tf1, tf2, tf3, tf4, tf5, tf6]),
   "computerized-jacquard-knitting": toGallery("High Speed Computerized Electronic Jacquard Single / Double Knitting Machine", [jq1, jq2, jq3, jq4, jq5, jq6]),
   "terry-velour-knitting": toGallery("High Speed Terry /Velour Circular Knitting Machine", [tv1, tv2, tv3, tv4, tv5, tv6]),
+  "yx-q-flat-knitting-series": toGallery("YX-Q Flat Knitting Machine Series", [yq1, yq2, yq3, yq4, yq5, yq6]),
 };
 
 export const getKnittingGalleryImages = (slug: string): GalleryImage[] => knittingGalleryImages[slug] ?? [];

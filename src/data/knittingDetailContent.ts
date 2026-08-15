@@ -1,5 +1,33 @@
 import type { MachineDetailCard, MachineDetailContent } from "@/data/machineDetailTypes";
 
+import doubleJerseyRibKnittingEngCamMaterial from "@/assets/knitting-machine/double-jersey-rib-knitting/engineering/cam-material.png";
+import doubleJerseyRibKnittingEngSinkers from "@/assets/knitting-machine/double-jersey-rib-knitting/engineering/sinkers.png";
+import doubleJerseyRibKnittingEngElectricMachinery from "@/assets/knitting-machine/double-jersey-rib-knitting/engineering/electric-machinery.png";
+import doubleJerseyRibKnittingEngMachineFramework from "@/assets/knitting-machine/double-jersey-rib-knitting/engineering/machine-framework.png";
+import doubleJerseyRibKnittingValCentralLiftingSystem from "@/assets/knitting-machine/double-jersey-rib-knitting/value/central-lifting-system.png";
+import doubleJerseyRibKnittingValHeartComponents from "@/assets/knitting-machine/double-jersey-rib-knitting/value/heart-components.png";
+import doubleJerseyRibKnittingValComputerControlSystem from "@/assets/knitting-machine/double-jersey-rib-knitting/value/computer-control-system.png";
+import openWidthKnittingEngHeartComponents from "@/assets/knitting-machine/open-width-knitting/engineering/heart-components.png";
+import threeThreadFleeceKnittingEngSinkers from "@/assets/knitting-machine/three-thread-fleece-knitting/engineering/sinkers.png";
+import singleJerseyKnittingEngCentralLiftingSystem from "@/assets/knitting-machine/single-jersey-knitting/engineering/central-lifting-system.png";
+import singleJerseyKnittingEngCamMaterial from "@/assets/knitting-machine/single-jersey-knitting/engineering/cam-material.png";
+import singleJerseyKnittingEngHeartComponents from "@/assets/knitting-machine/single-jersey-knitting/engineering/heart-components.png";
+import singleJerseyKnittingEngSinkers from "@/assets/knitting-machine/single-jersey-knitting/engineering/sinkers.png";
+import singleJerseyKnittingEngElectricMachinery from "@/assets/knitting-machine/single-jersey-knitting/engineering/electric-machinery.png";
+import singleJerseyKnittingEngComputerControlSystem from "@/assets/knitting-machine/single-jersey-knitting/engineering/computer-control-system.png";
+import yxQFlatKnittingEngMachineHead from "@/assets/knitting-machine/yx-q-flat-knitting-series/engineering/machine-head.png";
+import yxQFlatKnittingEngYarnStorageDevice from "@/assets/knitting-machine/yx-q-flat-knitting-series/engineering/yarn-storage-device.png";
+import yxQFlatKnittingEngMotorizedYarnFeeder from "@/assets/knitting-machine/yx-q-flat-knitting-series/engineering/motorized-yarn-feeder.jpg";
+import yxQFlatKnittingEngControlSystem from "@/assets/knitting-machine/yx-q-flat-knitting-series/engineering/control-system.png";
+import yxQFlatKnittingEngAntennaStation from "@/assets/knitting-machine/yx-q-flat-knitting-series/engineering/antenna-station.png";
+import imgKnittingMachineSingleJerseyKnittingExtraApplication from "@/assets/knitting-machine/single-jersey-knitting/extra/application.jpg";
+import imgKnittingMachineDoubleJerseyRibKnittingExtraApplication from "@/assets/knitting-machine/double-jersey-rib-knitting/extra/application.jpg";
+import imgKnittingMachineOpenWidthKnittingExtraApplication from "@/assets/knitting-machine/open-width-knitting/extra/application.jpg";
+import imgKnittingMachineThreeThreadFleeceKnittingExtraApplication from "@/assets/knitting-machine/three-thread-fleece-knitting/extra/application.jpg";
+import imgKnittingMachineComputerizedJacquardKnittingExtraApplication from "@/assets/knitting-machine/computerized-jacquard-knitting/extra/application.jpg";
+import imgKnittingMachineTerryVelourKnittingExtraApplication from "@/assets/knitting-machine/terry-velour-knitting/extra/application.jpg";
+import imgKnittingMachineYxQFlatKnittingSeriesExtraApplication from "@/assets/knitting-machine/yx-q-flat-knitting-series/extra/application.jpg";
+
 const knittingEngineeringSubtitle =
   "Every factor affecting knitting accuracy has been taken into consideration. Control system, transmission system, motor, cam, etc. Where you cannot see are details.";
 
@@ -14,18 +42,18 @@ const knittingParamColumns = [
 ];
 
 const standardEngineeringItems: MachineDetailCard[] = [
-  { title: "Central lifting system", description: "Compact structure, smooth lifting, adjusting fabric weight accurately and simply." },
-  { title: "Cam material", description: "Made of imported alloy steel with special heat treatment and CNC machining for smooth, durable needle motion." },
-  { title: "Heart components", description: "Strong interchangeability, can be quickly replaced, and easy to operate." },
-  { title: "Sinkers", description: "Precision-manufactured sinkers support stable knitting activity and faultless fabric output." },
-  { title: "Electric machinery", description: "High-performance motors and electrical systems ensure stable high-speed operation." },
-  { title: "Computer control system", description: "Easy system operation with computerized needle selection and USB pattern input." },
+  { title: "Central lifting system", description: "Compact structure, smooth lifting, adjusting fabric weight accurately and simply.", image: singleJerseyKnittingEngCentralLiftingSystem.src },
+  { title: "Cam material", description: "Made of imported alloy steel with special heat treatment and CNC machining for smooth, durable needle motion.", image: singleJerseyKnittingEngCamMaterial.src },
+  { title: "Heart components", description: "Strong interchangeability, can be quickly replaced, and easy to operate.", image: singleJerseyKnittingEngHeartComponents.src },
+  { title: "Sinkers", description: "Precision-manufactured sinkers support stable knitting activity and faultless fabric output.", image: singleJerseyKnittingEngSinkers.src },
+  { title: "Electric machinery", description: "High-performance motors and electrical systems ensure stable high-speed operation.", image: singleJerseyKnittingEngElectricMachinery.src },
+  { title: "Computer control system", description: "Easy system operation with computerized needle selection and USB pattern input.", image: singleJerseyKnittingEngComputerControlSystem.src },
 ];
 
 const valuePillars: MachineDetailCard[] = [
-  { title: "Central lifting system", description: "Compact structure, smooth lifting, precise and simple adjustment of fabric weight." },
-  { title: "Heart components", description: "Strong interchangeability, quick replacement, easy to operate." },
-  { title: "Computer control system", description: "Easy system operation, computer needle selection system, USB input." },
+  { title: "Central lifting system", description: "Compact structure, smooth lifting, precise and simple adjustment of fabric weight.", image: doubleJerseyRibKnittingValCentralLiftingSystem.src },
+  { title: "Heart components", description: "Strong interchangeability, quick replacement, easy to operate.", image: doubleJerseyRibKnittingValHeartComponents.src },
+  { title: "Computer control system", description: "Easy system operation, computer needle selection system, USB input.", image: doubleJerseyRibKnittingValComputerControlSystem.src },
 ];
 
 const standardEquipment = [
@@ -55,6 +83,7 @@ export const knittingDetailContent: MachineDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN circular knitting machine?",
       body: "Imagination is infinite, as long as you can imagine, you can knit. Use Yonthin knitted fabric to make vests, T-shirts, sportswear, swimsuits, etc.",
+    image: imgKnittingMachineSingleJerseyKnittingExtraApplication.src,
     },
     engineering: {
       title: "Why is it good at knitting?",
@@ -103,15 +132,16 @@ export const knittingDetailContent: MachineDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN circular knitting machine?",
       body: "Imagination is infinite, as long as you can imagine, you can knit. Using Yonthin's sandwich health fabric, Roman fabric, mesh fabric, and other fabrics to make various clothing.",
+    image: imgKnittingMachineDoubleJerseyRibKnittingExtraApplication.src,
     },
     engineering: {
       title: "Why is it good at knitting?",
       subtitle: knittingEngineeringSubtitle,
       items: [
-        { title: "Cam material", description: "Made of imported alloy steel; adopt imported special heat treatment; using Computer CAD/CAM to assist in design; less needle damage and high rotational speed." },
-        { title: "Sinkers", description: "Precision-manufactured sinkers support stable knitting activity and faultless fabric output." },
-        { title: "Electric machinery", description: "High-performance motors and electrical systems ensure stable high-speed operation." },
-        { title: "Machine framework", description: "New designed frame with simultaneous displacement for exacter and simpler needle tolerance adjustment." },
+        { title: "Cam material", description: "Made of imported alloy steel; adopt imported special heat treatment; using Computer CAD/CAM to assist in design; less needle damage and high rotational speed.", image: doubleJerseyRibKnittingEngCamMaterial.src },
+        { title: "Sinkers", description: "Precision-manufactured sinkers support stable knitting activity and faultless fabric output.", image: doubleJerseyRibKnittingEngSinkers.src },
+        { title: "Electric machinery", description: "High-performance motors and electrical systems ensure stable high-speed operation.", image: doubleJerseyRibKnittingEngElectricMachinery.src },
+        { title: "Machine framework", description: "New designed frame with simultaneous displacement for exacter and simpler needle tolerance adjustment.", image: doubleJerseyRibKnittingEngMachineFramework.src },
         ...standardEngineeringItems.filter((item) => !["Cam material", "Sinkers", "Electric machinery"].includes(item.title)),
       ],
     },
@@ -155,12 +185,13 @@ export const knittingDetailContent: MachineDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN circular knitting machine?",
       body: "Imagination is infinite, as long as you can imagine, you can knit. Produce various fabrics using raw materials such as cotton, blended fabrics, silk for the production of clothing.",
+    image: imgKnittingMachineOpenWidthKnittingExtraApplication.src,
     },
     engineering: {
       title: "Why is it good at knitting?",
       subtitle: knittingEngineeringSubtitle,
       items: [
-        { title: "Heart components", description: "Strong interchangeability, can be quickly replaced, easy to operate." },
+        { title: "Heart components", description: "Strong interchangeability, can be quickly replaced, easy to operate.", image: openWidthKnittingEngHeartComponents.src },
         ...standardEngineeringItems.filter((item) => item.title !== "Heart components"),
       ],
     },
@@ -203,12 +234,13 @@ export const knittingDetailContent: MachineDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN circular knitting machine?",
       body: "Imagination is infinite, as long as you can imagine, you can produce. Yonthin is very suitable for fabrics such as cotton hoodies, silk hoodies, and stretch hoodies.",
+    image: imgKnittingMachineThreeThreadFleeceKnittingExtraApplication.src,
     },
     engineering: {
       title: "Why is it good at knitting?",
       subtitle: knittingEngineeringSubtitle,
       items: [
-        { title: "Sinkers", description: "Reduce winding tension, move smoothly on a flat surface, and make the fabric uniform to achieve perfect quality." },
+        { title: "Sinkers", description: "Reduce winding tension, move smoothly on a flat surface, and make the fabric uniform to achieve perfect quality.", image: threeThreadFleeceKnittingEngSinkers.src },
         ...standardEngineeringItems.filter((item) => item.title !== "Sinkers"),
       ],
     },
@@ -249,6 +281,7 @@ export const knittingDetailContent: MachineDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN circular knitting machine?",
       body: "Imagination is infinite. As long as you can imagine, you can produce. Yonthin can be used to produce various jacquard mesh fabrics with an unlimited pattern range.",
+    image: imgKnittingMachineComputerizedJacquardKnittingExtraApplication.src,
     },
     engineering: {
       title: "Why it's So Good at Precision Engineering?",
@@ -304,6 +337,7 @@ export const knittingDetailContent: MachineDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN circular knitting machine?",
       body: "Imagination is infinite, as long as you can imagine, you can produce. Yonthin can produce towel fabrics such as goose down, diamond down, velvet, and fleece.",
+    image: imgKnittingMachineTerryVelourKnittingExtraApplication.src,
     },
     engineering: {
       title: "Why is it good at knitting?",
@@ -330,6 +364,64 @@ export const knittingDetailContent: MachineDetailContent[] = [
       optional: ["Lycra Attachment", "Lycra Feeding Units", "Yarn Input Measuring Device", "Central Stitch System"],
     },
     formProductName: "High Speed Terry /Velour Circular Knitting Machine",
+  },
+  {
+    slug: "yx-q-flat-knitting-series",
+    breadcrumbCategoryLabel: "Flat Knitting Machine",
+    breadcrumbSubcategory: "YX-Q Flat Knitting Machine Series",
+    intro:
+      "The YX-Q series equipment is a fully formed computerized flat knitting machine independently developed by YONTHIN Technology, which is highly efficient, stable, and easy to use. It is widely used for weaving integrated woolen sweaters, seamless hats, scarves, socks, gloves, and more.",
+    highlights: [
+      'In "YX-Q", "YX" represents YONTHIN, and "Q" represents fully formed',
+      "Remote Control",
+      "Online Centralized Monitoring",
+      "Pattern Design System",
+      "Efficient production",
+      "Cost saving",
+      "Product diversity",
+      "Stable quality",
+      "Energy conservation and environmental protection",
+    ],
+    application: {
+      title: "What can I do with YONTHIN knitting machine?",
+      body: "Imagination is infinite, as long as you can imagine, you can knit. Yonthin is widely used in weaving integrated woolen sweaters, seamless hats, scarves, socks, gloves, etc.",
+    image: imgKnittingMachineYxQFlatKnittingSeriesExtraApplication.src,
+    },
+    engineering: {
+      title: "Why is it good at knitting?",
+      subtitle: knittingEngineeringSubtitle,
+      items: [
+        { title: "Machine head", description: "Fully electric, small machine head, light weight. Equipped with a rapid rotation machine head system.", image: yxQFlatKnittingEngMachineHead.src },
+        { title: "Yarn storage device", description: "Sensor monitoring, anti-winding device, and magnetic tension device reduce yarn resistance during transportation.", image: yxQFlatKnittingEngYarnStorageDevice.src },
+        { title: "Motorized yarn feeder", description: "Horizontal free movement with encoder precise feedback control enables specific pattern weaving, reduced head travel, and fast, precise positioning.", image: yxQFlatKnittingEngMotorizedYarnFeeder.src },
+        { title: "Control System", description: "LCD touch screen with USB and network transmission, multi-language version, monitoring screen, and easy upgrades.", image: yxQFlatKnittingEngControlSystem.src },
+        { title: "Antenna station", description: "Sunken antenna station that stops or slows for large and small knots and automatically recovers speed.", image: yxQFlatKnittingEngAntennaStation.src },
+      ],
+    },
+    productFeatures: [
+      "Efficient production with dense needle combination",
+      "Cost saving through fully-formed (Knit & Wear) technology",
+      "Product diversity (integrated sweaters, hats, socks, gloves)",
+      "Stable quality with three-system single-head configuration",
+      "Intuitive CNC operating interface for easy use",
+      "Energy conservation and environmental protection design",
+    ],
+    parameters: {
+      rowKey: "model",
+      columns: [
+        { key: "model", label: "MODEL" },
+        { key: "stitch", label: "STITCH LENGTH" },
+        { key: "needles", label: "NEEDLES / BREADTH" },
+      ],
+      rows: [
+        { model: "YX-Q G12", stitch: "12G", needles: "12-needle / 88-inch" },
+        { model: "YX-Q G14", stitch: "14G", needles: "14-needle / 88-inch" },
+        { model: "YX-Q G16", stitch: "16G", needles: "16-needle / 88-inch" },
+        { model: "YX-Q G18", stitch: "18G", needles: "18-needle / 88-inch" },
+      ],
+      footerNote: "* Machine speed: segmental adjustment, maximum 1.6m/s with 255 programmable speed segments. Braiding system: single-head and three-system. Shaking table: motor driven, maximum 2 inches.",
+    },
+    formProductName: "YX-Q Flat Knitting Machine Series",
   },
 ];
 

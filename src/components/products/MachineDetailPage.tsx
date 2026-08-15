@@ -26,10 +26,12 @@ export default function MachineDetailPage({ product, category, content }: Machin
   const galleryImages = useMemo(() => getMachineGalleryImages(product.slug), [product.slug]);
   const [activeSlide, setActiveSlide] = useState(0);
   const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [imagePopup, setImagePopup] = useState<{ src: string; alt: string; title: string } | null>(null);
 
   const slide = galleryImages[activeSlide] ?? galleryImages[0];
   const lightboxOpen = lightboxIndex !== null;
   const activeLightboxImage = lightboxIndex === null ? null : galleryImages[lightboxIndex];
+  const popupOpen = imagePopup !== null;
   const featureMidpoint = Math.ceil(content.productFeatures.length / 2);
   const featureColumns = [
     content.productFeatures.slice(0, featureMidpoint),
@@ -79,6 +81,24 @@ export default function MachineDetailPage({ product, category, content }: Machin
       window.removeEventListener("keydown", onKeyDown);
     };
   }, [lightboxOpen, galleryImages.length]);
+
+  useEffect(() => {
+    if (!popupOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setImagePopup(null);
+      }
+    };
+
+    document.body.style.overflow = "hidden";
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = "";
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [popupOpen]);
 
   return (
     <>
@@ -161,6 +181,23 @@ export default function MachineDetailPage({ product, category, content }: Machin
         <section className="rounded-xl border border-blue-200 bg-gradient-to-r from-blue-50/70 to-orange-50/70 p-6 md:p-8">
           <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">{content.application.title}</h3>
           <p className="mt-4 text-slate-700">{content.application.body}</p>
+          {content.application.image && (
+            <button
+              type="button"
+              onClick={() =>
+                setImagePopup({ src: content.application.image!, alt: content.application.title, title: content.application.title })
+              }
+              className="mt-6 block w-full"
+              aria-label={`View larger image: ${content.application.title}`}
+            >
+              <img
+                src={content.application.image}
+                alt={content.application.title}
+                loading="lazy"
+                className="w-full cursor-zoom-in rounded-lg object-cover transition duration-300 hover:opacity-90 md:max-h-96"
+              />
+            </button>
+          )}
         </section>
 
         {content.usability && content.usability.length > 0 && (
@@ -170,6 +207,21 @@ export default function MachineDetailPage({ product, category, content }: Machin
               {content.usability.map((item) => (
                 <div key={item.title} className={hoverCardClass}>
                   <span className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-blue-500 via-orange-400 to-blue-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  {item.image && (
+                    <button
+                      type="button"
+                      onClick={() => setImagePopup({ src: item.image!, alt: item.title, title: item.title })}
+                      className="mb-3 block w-full"
+                      aria-label={`View larger image: ${item.title}`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                        className="h-32 w-full cursor-zoom-in rounded-md object-cover transition duration-300 hover:opacity-90"
+                      />
+                    </button>
+                  )}
                   <h4 className="text-lg font-semibold text-slate-900">{item.title}</h4>
                   <p className="mt-2 text-sm text-slate-600">{item.description}</p>
                 </div>
@@ -180,21 +232,59 @@ export default function MachineDetailPage({ product, category, content }: Machin
 
         {content.automationBadges && content.automationBadges.length > 0 && (
           <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {content.automationBadges.map((badge) => (
-              <div key={badge} className={badgeClass}>
-                {badge}
-              </div>
-            ))}
+            {content.automationBadges.map((badge) => {
+              const label = typeof badge === "string" ? badge : badge.label;
+              const image = typeof badge === "string" ? undefined : badge.image;
+              return (
+                <div key={label} className={badgeClass}>
+                  {image && (
+                    <button
+                      type="button"
+                      onClick={() => setImagePopup({ src: image, alt: label, title: label })}
+                      className="mb-3 block w-full"
+                      aria-label={`View larger image: ${label}`}
+                    >
+                      <img
+                        src={image}
+                        alt={label}
+                        loading="lazy"
+                        className="mx-auto h-24 w-full cursor-zoom-in rounded-md object-cover transition duration-300 hover:opacity-90"
+                      />
+                    </button>
+                  )}
+                  {label}
+                </div>
+              );
+            })}
           </section>
         )}
 
         {content.extraBadges && content.extraBadges.length > 0 && (
           <section className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-            {content.extraBadges.map((badge) => (
-              <div key={badge} className={badgeClass}>
-                {badge}
-              </div>
-            ))}
+            {content.extraBadges.map((badge) => {
+              const label = typeof badge === "string" ? badge : badge.label;
+              const image = typeof badge === "string" ? undefined : badge.image;
+              return (
+                <div key={label} className={badgeClass}>
+                  {image && (
+                    <button
+                      type="button"
+                      onClick={() => setImagePopup({ src: image, alt: label, title: label })}
+                      className="mb-3 block w-full"
+                      aria-label={`View larger image: ${label}`}
+                    >
+                      <img
+                        src={image}
+                        alt={label}
+                        loading="lazy"
+                        className="mx-auto h-24 w-full cursor-zoom-in rounded-md object-cover transition duration-300 hover:opacity-90"
+                      />
+                    </button>
+                  )}
+                  {label}
+                </div>
+              );
+            })}
           </section>
         )}
 
@@ -206,6 +296,21 @@ export default function MachineDetailPage({ product, category, content }: Machin
               {content.engineering.items.map((item) => (
                 <div key={item.title} className={hoverCardClass}>
                   <span className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-orange-500 via-blue-500 to-orange-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  {item.image && (
+                    <button
+                      type="button"
+                      onClick={() => setImagePopup({ src: item.image!, alt: item.title, title: item.title })}
+                      className="mb-3 block w-full"
+                      aria-label={`View larger image: ${item.title}`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                        className="h-32 w-full cursor-zoom-in rounded-md object-cover transition duration-300 hover:opacity-90"
+                      />
+                    </button>
+                  )}
                   <h4 className="font-semibold text-slate-900">{item.title}</h4>
                   <p className="mt-2 text-sm text-slate-600">{item.description}</p>
                 </div>
@@ -222,6 +327,21 @@ export default function MachineDetailPage({ product, category, content }: Machin
               {content.qualitySection.items.map((item) => (
                 <div key={item.title} className={hoverCardClass}>
                   <span className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-blue-500 via-orange-400 to-blue-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  {item.image && (
+                    <button
+                      type="button"
+                      onClick={() => setImagePopup({ src: item.image!, alt: item.title, title: item.title })}
+                      className="mb-3 block w-full"
+                      aria-label={`View larger image: ${item.title}`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                        className="h-32 w-full cursor-zoom-in rounded-md object-cover transition duration-300 hover:opacity-90"
+                      />
+                    </button>
+                  )}
                   <h4 className="font-semibold text-slate-900">{item.title}</h4>
                   <p className="mt-2 text-sm text-slate-600">{item.description}</p>
                 </div>
@@ -237,6 +357,21 @@ export default function MachineDetailPage({ product, category, content }: Machin
               {content.valueItems.map((item) => (
                 <div key={item.title} className={hoverCardClass}>
                   <span className="pointer-events-none absolute inset-x-0 top-0 h-0.5 bg-gradient-to-r from-blue-500 via-orange-400 to-blue-500 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+                  {item.image && (
+                    <button
+                      type="button"
+                      onClick={() => setImagePopup({ src: item.image!, alt: item.title, title: item.title })}
+                      className="mb-3 block w-full"
+                      aria-label={`View larger image: ${item.title}`}
+                    >
+                      <img
+                        src={item.image}
+                        alt={item.title}
+                        loading="lazy"
+                        className="h-32 w-full cursor-zoom-in rounded-md object-cover transition duration-300 hover:opacity-90"
+                      />
+                    </button>
+                  )}
                   <h4 className="font-semibold text-slate-900">{item.title}</h4>
                   <p className="mt-2 text-sm text-slate-600">{item.description}</p>
                 </div>
@@ -389,7 +524,10 @@ export default function MachineDetailPage({ product, category, content }: Machin
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
-          <img src={activeLightboxImage.src} alt={activeLightboxImage.alt} className="max-h-[88vh] max-w-[92vw] rounded-md object-contain" />
+          <div className="flex max-h-[88vh] max-w-[92vw] flex-col items-center gap-3">
+            <img src={activeLightboxImage.src} alt={activeLightboxImage.alt} className="max-h-[78vh] max-w-[92vw] rounded-md object-contain" />
+            <h4 className="text-center text-lg font-semibold text-white">{product.name}</h4>
+          </div>
           <button
             type="button"
             onClick={() => {
@@ -401,6 +539,29 @@ export default function MachineDetailPage({ product, category, content }: Machin
           >
             <ChevronRight className="h-6 w-6" />
           </button>
+        </div>
+      )}
+
+      {popupOpen && imagePopup && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/85 p-4"
+          onClick={() => setImagePopup(null)}
+        >
+          <button
+            type="button"
+            onClick={() => setImagePopup(null)}
+            className="absolute right-4 top-4 rounded-full bg-black/60 p-2 text-white transition hover:bg-black/80"
+            aria-label="Close image preview"
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <div
+            className="flex max-h-[88vh] max-w-[92vw] flex-col items-center gap-3"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <img src={imagePopup.src} alt={imagePopup.alt} className="max-h-[78vh] max-w-[92vw] rounded-md object-contain" />
+            <h4 className="text-center text-lg font-semibold text-white">{imagePopup.title}</h4>
+          </div>
         </div>
       )}
     </>

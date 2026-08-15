@@ -1,15 +1,18 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Search } from "lucide-react";
+import { categories } from "@/data/products";
+import ProductSearch from "@/components/ProductSearch";
 
 const navItems = [
-  { label: "Home", path: "/" },
+  { label: "Home", path: "/", linkPath: "/" },
   {
     label: "About Us",
     path: "/about",
+    linkPath: "/about/company-profile",
     children: [
       { label: "Company Profile", path: "/about/company-profile" },
       { label: "Managing Director's Profile", path: "/about/managing-director" },
@@ -19,10 +22,16 @@ const navItems = [
       { label: "Core Values", path: "/about/core-values" },
     ],
   },
-  { label: "Products", path: "/products" },
+  {
+    label: "Products",
+    path: "/products",
+    linkPath: "/products",
+    children: categories.map((cat) => ({ label: cat.name, path: `/products/${cat.slug}` })),
+  },
   {
     label: "Media",
     path: "/media",
+    linkPath: "/media/news",
     children: [
       { label: "News", path: "/media/news" },
       { label: "Photo Gallery", path: "/media/photo-gallery" },
@@ -32,19 +41,54 @@ const navItems = [
   {
     label: "Support",
     path: "/support",
+    linkPath: "/support/faq",
     children: [
       { label: "FAQ", path: "/support/faq" },
       { label: "Downloads", path: "/support/downloads" },
       { label: "Service Request", path: "/support/service-request" },
     ],
   },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "/contact", linkPath: "/contact" },
 ];
 
 const Navbar = () => {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [searchOpen, setSearchOpen] = useState(false);
   const pathname = usePathname();
+  const searchPanelRef = useRef<HTMLDivElement>(null);
+  const searchButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    setSearchOpen(false);
+    setMobileOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    if (!searchOpen) return;
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setSearchOpen(false);
+    };
+    const onClickOutside = (event: MouseEvent) => {
+      const target = event.target as Node;
+      if (
+        searchPanelRef.current &&
+        !searchPanelRef.current.contains(target) &&
+        searchButtonRef.current &&
+        !searchButtonRef.current.contains(target)
+      ) {
+        setSearchOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+    document.addEventListener("mousedown", onClickOutside);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      document.removeEventListener("mousedown", onClickOutside);
+    };
+  }, [searchOpen]);
 
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
@@ -64,7 +108,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <Link
-                href={item.path}
+                href={item.linkPath}
                 className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-accent ${
                   pathname === item.path || pathname.startsWith(item.path + "/")
                     ? "text-accent"
@@ -75,7 +119,7 @@ const Navbar = () => {
                 {item.children && <ChevronDown className="h-3 w-3" />}
               </Link>
               {item.children && openDropdown === item.label && (
-                <ul className="absolute left-0 top-full min-w-[200px] rounded-md border border-border bg-background py-1 shadow-lg">
+                <ul className="absolute left-0 top-full min-w-[240px] rounded-md border border-border bg-background py-1 shadow-lg">
                   {item.children.map((child) => (
                     <li key={child.path}>
                       <Link
@@ -92,15 +136,47 @@ const Navbar = () => {
           ))}
         </ul>
 
-        {/* Mobile Toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="rounded-md p-2 lg:hidden"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </button>
+        <div className="flex items-center gap-1">
+          {/* Search Toggle */}
+          <button
+            ref={searchButtonRef}
+            onClick={() => {
+              setSearchOpen((prev) => !prev);
+              setMobileOpen(false);
+            }}
+            className={`rounded-md p-2 transition-colors hover:bg-muted ${searchOpen ? "text-accent" : "text-foreground"}`}
+            aria-label={searchOpen ? "Close search" : "Search products"}
+          >
+            {searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}
+          </button>
+
+          {/* Mobile Toggle */}
+          <button
+            onClick={() => {
+              setMobileOpen(!mobileOpen);
+              setSearchOpen(false);
+            }}
+            className="rounded-md p-2 lg:hidden"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
       </div>
+
+      {/* Search Panel */}
+      {searchOpen && (
+        <div ref={searchPanelRef} className="border-t border-border bg-background px-4 py-4 shadow-md">
+          <div className="container">
+            <ProductSearch
+              placeholder="Search machines by name..."
+              size="lg"
+              autoFocus
+              onNavigate={() => setSearchOpen(false)}
+            />
+          </div>
+        </div>
+      )}
 
       {/* Mobile Nav */}
       {mobileOpen && (
@@ -109,7 +185,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link
-                  href={item.path}
+                  href={item.linkPath}
                   onClick={() => setMobileOpen(false)}
                   className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent"
                 >
