@@ -1,5 +1,112 @@
 import type { MachineDetailCard, MachineDetailContent } from "@/data/machineDetailTypes";
 
+import yxGFlatEmbroideryEngBearingUpgrade from "@/assets/embroidery-machine/yx-g-flat-embroidery/engineering/bearing-upgrade.png";
+import yxGFlatEmbroideryEngMotorUpgrade from "@/assets/embroidery-machine/yx-g-flat-embroidery/engineering/motor-upgrade.jpg";
+import yxGFlatEmbroideryEngSynchronousBeltWheelUpgrade from "@/assets/embroidery-machine/yx-g-flat-embroidery/engineering/synchronous-belt-wheel-upgrade.png";
+import yxGFlatEmbroideryEngBeltUpgrade from "@/assets/embroidery-machine/yx-g-flat-embroidery/engineering/belt-upgrade.png";
+import yxGFlatEmbroideryEngHeadUpgrade from "@/assets/embroidery-machine/yx-g-flat-embroidery/engineering/head-upgrade.png";
+import yxGFlatEmbroideryEngAssemblyProcess from "@/assets/embroidery-machine/yx-g-flat-embroidery/engineering/assembly-process.png";
+import yxGFlatEmbroideryValHighSpeedStability from "@/assets/embroidery-machine/yx-g-flat-embroidery/value/high-speed-stability.png";
+import yxGFlatEmbroideryValExpansiveEmbroideryArea from "@/assets/embroidery-machine/yx-g-flat-embroidery/value/expansive-embroidery-area.png";
+import yxGFlatEmbroideryValEvenBobbinThread from "@/assets/embroidery-machine/yx-g-flat-embroidery/value/even-bobbin-thread.png";
+import yxGlChenilleEmbroideryEngSynchronousBeltWheelUpgrade from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/engineering/synchronous-belt-wheel-upgrade.png";
+import yxGlChenilleEmbroideryEngMotorUpgrade from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/engineering/motor-upgrade.png";
+import yxGlChenilleEmbroideryEngAssemblyProcess from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/engineering/assembly-process.png";
+import yxGlChenilleEmbroideryEngBeltUpgrade from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/engineering/belt-upgrade.png";
+import yxGlChenilleEmbroideryEngBearingUpgrade from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/engineering/bearing-upgrade.png";
+import yxGlChenilleEmbroideryEngHeadUpgrade from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/engineering/head-upgrade.png";
+import yxGlChenilleEmbroideryValHighSpeedStability from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/value/high-speed-stability.png";
+import yxGlChenilleEmbroideryValExpansiveEmbroideryArea from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/value/expansive-embroidery-area.png";
+import yxGlChenilleEmbroideryValEvenBobbinThread from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/value/even-bobbin-thread.png";
+import yxGpTappingEmbroideryEngMotorUpgrade from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/engineering/motor-upgrade.jpg";
+import yxGpTappingEmbroideryEngSynchronousBeltWheelUpgrade from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/engineering/synchronous-belt-wheel-upgrade.png";
+import yxGpTappingEmbroideryEngBeltUpgrade from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/engineering/belt-upgrade.png";
+import yxGpTappingEmbroideryEngBearingUpgrade from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/engineering/bearing-upgrade.png";
+import yxGpTappingEmbroideryEngHeadUpgrade from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/engineering/head-upgrade.png";
+import yxGpTappingEmbroideryEngAssemblyProcess from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/engineering/assembly-process.png";
+import yxGpTappingEmbroideryValHighSpeedStability from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/value/high-speed-stability.png";
+import yxGpTappingEmbroideryValExpansiveEmbroideryArea from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/value/expansive-embroidery-area.png";
+import yxGpTappingEmbroideryValEvenBobbinThread from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/value/even-bobbin-thread.png";
+import yxMCapEmbroideryEngInstallTheCapHoop from "@/assets/embroidery-machine/yx-m-cap-embroidery/engineering/install-the-cap-hoop.png";
+import yxMCapEmbroideryEngNeedleHeightAdjustment from "@/assets/embroidery-machine/yx-m-cap-embroidery/engineering/needle-height-adjustment.jpg";
+import yxMCapEmbroideryEngNeedleBarLowestPoint from "@/assets/embroidery-machine/yx-m-cap-embroidery/engineering/needle-bar-lowest-point.png";
+import yxMCapEmbroideryEngMotorUpgrade from "@/assets/embroidery-machine/yx-m-cap-embroidery/engineering/motor-upgrade.png";
+import yxMCapEmbroideryValPersonalizedDesign from "@/assets/embroidery-machine/yx-m-cap-embroidery/value/personalized-design.png";
+import yxMCapEmbroideryValStable3DHatEmbroidery from "@/assets/embroidery-machine/yx-m-cap-embroidery/value/stable-3d-hat-embroidery.png";
+import yxMCapEmbroideryValConsistentPenetration from "@/assets/embroidery-machine/yx-m-cap-embroidery/value/consistent-penetration.png";
+import yxMSingleHeadCapEngYAxisRailInstallation from "@/assets/embroidery-machine/yx-m-single-head-cap/engineering/y-axis-rail-installation.jpg";
+import yxMSingleHeadCapEngHeadInstallation from "@/assets/embroidery-machine/yx-m-single-head-cap/engineering/head-installation.jpg";
+import yxMSingleHeadCapEngNeedleBarLowestPoint from "@/assets/embroidery-machine/yx-m-single-head-cap/engineering/needle-bar-lowest-point.png";
+import yxMSingleHeadCapEngNeedleHeightAdjustment from "@/assets/embroidery-machine/yx-m-single-head-cap/engineering/needle-height-adjustment.jpg";
+import yxMSingleHeadCapValPersonalizedDesign from "@/assets/embroidery-machine/yx-m-single-head-cap/value/personalized-design.png";
+import yxMSingleHeadCapValStable3DHatEmbroidery from "@/assets/embroidery-machine/yx-m-single-head-cap/value/stable-3d-hat-embroidery.png";
+import yxMSingleHeadCapValConsistentPenetration from "@/assets/embroidery-machine/yx-m-single-head-cap/value/consistent-penetration.png";
+import xMTwoHeadEmbroideryEngNeedleHeightAdjustment from "@/assets/embroidery-machine/x-m-two-head-embroidery/engineering/needle-height-adjustment.jpg";
+import xMTwoHeadEmbroideryEngHeadInstallation from "@/assets/embroidery-machine/x-m-two-head-embroidery/engineering/head-installation.jpg";
+import xMTwoHeadEmbroideryEngNeedleBarLowestPoint from "@/assets/embroidery-machine/x-m-two-head-embroidery/engineering/needle-bar-lowest-point.png";
+import xMTwoHeadEmbroideryEngYAxisRailInstallation from "@/assets/embroidery-machine/x-m-two-head-embroidery/engineering/y-axis-rail-installation.jpg";
+import xMTwoHeadEmbroideryValPersonalizedDesign from "@/assets/embroidery-machine/x-m-two-head-embroidery/value/personalized-design.png";
+import xMTwoHeadEmbroideryValStable3DHatEmbroidery from "@/assets/embroidery-machine/x-m-two-head-embroidery/value/stable-3d-hat-embroidery.png";
+import xMTwoHeadEmbroideryValConsistentPenetration from "@/assets/embroidery-machine/x-m-two-head-embroidery/value/consistent-penetration.png";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraApplication from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/application.jpg";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraComputerControlSystem from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/computer-control-system.png";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraAutomaticColorChange from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/automatic-color-change.jpg";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraAutomaticTrimmer from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/automatic-trimmer.png";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraMultipleLanguages from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/multiple-languages.png";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraReduceMaintenanceRequirements from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/reduce-maintenance-requirements.png";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraReduceMaintenanceFrequency from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/reduce-maintenance-frequency.png";
+import imgEmbroideryMachineYxGFlatEmbroideryExtra50FewerScrews from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/50-fewer-screws.png";
+import imgEmbroideryMachineYxGFlatEmbroideryExtraMoldingSquareGirder from "@/assets/embroidery-machine/yx-g-flat-embroidery/extra/molding-square-girder.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraApplication from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/application.jpg";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraComputerControlSystem from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/computer-control-system.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraMultiFunctionalCombination from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/multi-functional-combination.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraAutomaticTrimmer from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/automatic-trimmer.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraMultipleLanguages from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/multiple-languages.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraReduceMaintenanceRequirements from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/reduce-maintenance-requirements.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraReduceMaintenanceFrequency from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/reduce-maintenance-frequency.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtra50FewerScrews from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/50-fewer-screws.png";
+import imgEmbroideryMachineYxGlChenilleEmbroideryExtraMoldingSquareGirder from "@/assets/embroidery-machine/yx-gl-chenille-embroidery/extra/molding-square-girder.png";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraApplication from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/application.jpg";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraReduceMaintenanceRequirements from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/reduce-maintenance-requirements.jpg";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraReduceMaintenanceFrequency from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/reduce-maintenance-frequency.png";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtra50FewerScrews from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/50-fewer-screws.png";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraMoldingSquareGirder from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/molding-square-girder.png";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraControlSystem from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/control-system.png";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraAutomaticColorChange from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/automatic-color-change.png";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraUsbFloppyDriver from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/usb-floppy-driver.png";
+import imgEmbroideryMachineYxGpTappingEmbroideryExtraMultipleLanguages from "@/assets/embroidery-machine/yx-gp-tapping-embroidery/extra/multiple-languages.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraApplication from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/application.jpg";
+import imgEmbroideryMachineYxMCapEmbroideryExtraHumanizedUserInterface from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/humanized-user-interface.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraAutomaticColorChange from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/automatic-color-change.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraMultipleTransmissionMethods from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/multiple-transmission-methods.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraMultiLanguageOperationVersion from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/multi-language-operation-version.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraReducedMaintenanceRequirements from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/reduced-maintenance-requirements.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraReduceMaintenanceFrequency from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/reduce-maintenance-frequency.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraReduceScrewsBy50Overall from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/reduce-screws-by-50-overall.png";
+import imgEmbroideryMachineYxMCapEmbroideryExtraWholeMachineAssembly from "@/assets/embroidery-machine/yx-m-cap-embroidery/extra/whole-machine-assembly.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraApplication from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/application.jpg";
+import imgEmbroideryMachineYxMSingleHeadCapExtraStandardPackaging from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/standard-packaging.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraAccesoriesToolBox from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/accesories-tool-box.jpg";
+import imgEmbroideryMachineYxMSingleHeadCapExtra50FewerScrews from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/50-fewer-screws.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraModularInstallation from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/modular-installation.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraReduceMaintenanceRequirements from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/reduce-maintenance-requirements.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraReduceMaintenanceFrequency from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/reduce-maintenance-frequency.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraLcdTouchScreen from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/lcd-touch-screen.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraAutoColorChange from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/auto-color-change.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraUniversalWheelsEasyToMove from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/universal-wheels-easy-to-move.png";
+import imgEmbroideryMachineYxMSingleHeadCapExtraMultiLanguageOperationVersion from "@/assets/embroidery-machine/yx-m-single-head-cap/extra/multi-language-operation-version.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraApplication from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/application.jpg";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraStandardPackaging from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/standard-packaging.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraAccesoriesToolBox from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/accesories-tool-box.jpg";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtra50FewerScrews from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/50-fewer-screws.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraModularInstallation from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/modular-installation.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraReduceMaintenanceRequirements from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/reduce-maintenance-requirements.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraReduceMaintenanceFrequency from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/reduce-maintenance-frequency.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraLcdTouchScreen from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/lcd-touch-screen.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraAutoColorChange from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/auto-color-change.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraUniversalWheelsEasyToMove from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/universal-wheels-easy-to-move.png";
+import imgEmbroideryMachineXMTwoHeadEmbroideryExtraMultiLanguageOperationVersion from "@/assets/embroidery-machine/x-m-two-head-embroidery/extra/multi-language-operation-version.png";
+
 export type EmbroideryCard = MachineDetailCard;
 export type EmbroideryDetailContent = MachineDetailContent;
 
@@ -49,26 +156,28 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN embroidery machine?",
       body: "Imagination is infinite, as long as it can fit into the embroidery frame, you can embroider. Using YONTHIN embroidery to make fashion, wedding dresses, children's clothing, home textiles, knitting, leather, etc.",
+    image: imgEmbroideryMachineYxGFlatEmbroideryExtraApplication.src,
     },
     usability: usabilityDefaults,
-    automationBadges: ["Computer Control System", "Automatic Color Change", "Automatic Trimmer", "Multiple languages"],
+    automationBadges: [{ label: "Computer Control System", image: imgEmbroideryMachineYxGFlatEmbroideryExtraComputerControlSystem.src }, { label: "Automatic Color Change", image: imgEmbroideryMachineYxGFlatEmbroideryExtraAutomaticColorChange.src }, { label: "Automatic Trimmer", image: imgEmbroideryMachineYxGFlatEmbroideryExtraAutomaticTrimmer.src }, { label: "Multiple languages", image: imgEmbroideryMachineYxGFlatEmbroideryExtraMultipleLanguages.src }],
+    extraBadges: [{ label: "Reduce Maintenance Requirements", image: imgEmbroideryMachineYxGFlatEmbroideryExtraReduceMaintenanceRequirements.src }, { label: "Reduce Maintenance Frequency", image: imgEmbroideryMachineYxGFlatEmbroideryExtraReduceMaintenanceFrequency.src }, { label: "50% Fewer Screws", image: imgEmbroideryMachineYxGFlatEmbroideryExtra50FewerScrews.src }, { label: "Molding Square Girder", image: imgEmbroideryMachineYxGFlatEmbroideryExtraMoldingSquareGirder.src }],
     engineering: {
       title: "Why it's So Good at Embroidery?",
       subtitle:
         "Every factor that affects the precision of embroidery has been considered. Electric control, motor, transmission system, assembly process, etc. What you can't see are the details.",
       items: [
-        { title: "Bearing Upgrade", description: "Genuine imported bearing | Reduce maintenance | No need for oiling" },
-        { title: "Motor Upgrade", description: "Enhanced spindle and X/Y axis motors for superior stability and precision." },
-        { title: "Synchronous Belt Wheel Upgrade", description: "Aluminum alloy material with hard oxidation for high strength and lower inertia." },
-        { title: "Belt Upgrade", description: "Quieter motion and longer service life through optimized meshing." },
-        { title: "Head Upgrade", description: "More silent, durable, and stable at higher speeds." },
-        { title: "Assembly Process", description: "Optimized assembly checks ensure better machine alignment, lower vibration, and stable long-term output quality." },
+        { title: "Bearing Upgrade", description: "Genuine imported bearing | Reduce maintenance | No need for oiling", image: yxGFlatEmbroideryEngBearingUpgrade.src },
+        { title: "Motor Upgrade", description: "Enhanced spindle and X/Y axis motors for superior stability and precision.", image: yxGFlatEmbroideryEngMotorUpgrade.src },
+        { title: "Synchronous Belt Wheel Upgrade", description: "Aluminum alloy material with hard oxidation for high strength and lower inertia.", image: yxGFlatEmbroideryEngSynchronousBeltWheelUpgrade.src },
+        { title: "Belt Upgrade", description: "Quieter motion and longer service life through optimized meshing.", image: yxGFlatEmbroideryEngBeltUpgrade.src },
+        { title: "Head Upgrade", description: "More silent, durable, and stable at higher speeds.", image: yxGFlatEmbroideryEngHeadUpgrade.src },
+        { title: "Assembly Process", description: "Optimized assembly checks ensure better machine alignment, lower vibration, and stable long-term output quality.", image: yxGFlatEmbroideryEngAssemblyProcess.src },
       ],
     },
     valueItems: [
-      { title: "High-speed Stability", description: "Maintain stability at a speed of 1500 RPM" },
-      { title: "Expansive embroidery area", description: "Can easily handle embroidery of various sizes" },
-      { title: "Even Bobbin Thread", description: "Maintain a stable and uniform tension" },
+      { title: "High-speed Stability", description: "Maintain stability at a speed of 1500 RPM", image: yxGFlatEmbroideryValHighSpeedStability.src },
+      { title: "Expansive embroidery area", description: "Can easily handle embroidery of various sizes", image: yxGFlatEmbroideryValExpansiveEmbroideryArea.src },
+      { title: "Even Bobbin Thread", description: "Maintain a stable and uniform tension", image: yxGFlatEmbroideryValEvenBobbinThread.src },
     ],
     productFeatures: [
       "Double cam, max speed: 1500rpm",
@@ -119,26 +228,28 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN embroidery machine?",
       body: "Imagination is infinite, as long as it can fit into the embroidery frame, you can embroider. Using YONTHIN embroidery to make tablecloths, napkins, pillowcases, badges, silk, children's clothing, etc.",
+    image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraApplication.src,
     },
     usability: usabilityDefaults,
-    automationBadges: ["Computer Control System", "Multi functional combination", "Automatic Trimmer", "Multiple languages"],
+    automationBadges: [{ label: "Computer Control System", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraComputerControlSystem.src }, { label: "Multi functional combination", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraMultiFunctionalCombination.src }, { label: "Automatic Trimmer", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraAutomaticTrimmer.src }, { label: "Multiple languages", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraMultipleLanguages.src }],
+    extraBadges: [{ label: "Reduce Maintenance Requirements", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraReduceMaintenanceRequirements.src }, { label: "Reduce Maintenance Frequency", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraReduceMaintenanceFrequency.src }, { label: "50% Fewer Screws", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtra50FewerScrews.src }, { label: "Molding Square Girder", image: imgEmbroideryMachineYxGlChenilleEmbroideryExtraMoldingSquareGirder.src }],
     engineering: {
       title: "Why it's So Good at Embroidery?",
       subtitle:
         "Every factor that affects the precision of embroidery has been considered. Electric control, motor, transmission system, assembly process, etc. What you can't see are the details.",
       items: [
-        { title: "Synchronous Belt Wheel Upgrade", description: "Aluminum alloy material, hard oxidation treatment, lower motion inertia, high enough strength." },
-        { title: "Motor Upgrade", description: "Enhanced spindle and X/Y axis motors for superior stability and precision." },
-        { title: "Assembly Process", description: "Optimized assembly checks ensure better machine alignment, lower vibration, and stable long-term output quality." },
-        { title: "Belt Upgrade", description: "Quieter motion and longer service life through optimized meshing." },
-        { title: "Bearing Upgrade", description: "Genuine imported bearings that require no oiling and reduce maintenance." },
-        { title: "Head Upgrade", description: "More silent, durable, and stable at higher speeds." },
+        { title: "Synchronous Belt Wheel Upgrade", description: "Aluminum alloy material, hard oxidation treatment, lower motion inertia, high enough strength.", image: yxGlChenilleEmbroideryEngSynchronousBeltWheelUpgrade.src },
+        { title: "Motor Upgrade", description: "Enhanced spindle and X/Y axis motors for superior stability and precision.", image: yxGlChenilleEmbroideryEngMotorUpgrade.src },
+        { title: "Assembly Process", description: "Optimized assembly checks ensure better machine alignment, lower vibration, and stable long-term output quality.", image: yxGlChenilleEmbroideryEngAssemblyProcess.src },
+        { title: "Belt Upgrade", description: "Quieter motion and longer service life through optimized meshing.", image: yxGlChenilleEmbroideryEngBeltUpgrade.src },
+        { title: "Bearing Upgrade", description: "Genuine imported bearings that require no oiling and reduce maintenance.", image: yxGlChenilleEmbroideryEngBearingUpgrade.src },
+        { title: "Head Upgrade", description: "More silent, durable, and stable at higher speeds.", image: yxGlChenilleEmbroideryEngHeadUpgrade.src },
       ],
     },
     valueItems: [
-      { title: "High-speed Stability", description: "Maintain stability at a speed of 1500 RPM" },
-      { title: "Expansive embroidery area", description: "Can easily handle embroidery of various sizes" },
-      { title: "Even Bobbin Thread", description: "Maintain a stable and uniform tension" },
+      { title: "High-speed Stability", description: "Maintain stability at a speed of 1500 RPM", image: yxGlChenilleEmbroideryValHighSpeedStability.src },
+      { title: "Expansive embroidery area", description: "Can easily handle embroidery of various sizes", image: yxGlChenilleEmbroideryValExpansiveEmbroideryArea.src },
+      { title: "Even Bobbin Thread", description: "Maintain a stable and uniform tension", image: yxGlChenilleEmbroideryValEvenBobbinThread.src },
     ],
     productFeatures: [
       "New A type chenille head more speedy, stable & quiet",
@@ -182,6 +293,7 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN embroidery machine?",
       body: "There is no limit to imagination. You can embroider it as long as you can hoop it. Using YONTHIN embroidery to make fashion, wedding dresses, shoe uppers, home textiles, mesh fabrics, etc.",
+    image: imgEmbroideryMachineYxGpTappingEmbroideryExtraApplication.src,
     },
     usability: [
       {
@@ -200,23 +312,25 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
           "Whether it's control panel operation, embroidery pattern transmission, or other machine operations, YONTHIN provides great convenience.",
       },
     ],
+    automationBadges: [{ label: "Control System", image: imgEmbroideryMachineYxGpTappingEmbroideryExtraControlSystem.src }, { label: "Automatic Color Change", image: imgEmbroideryMachineYxGpTappingEmbroideryExtraAutomaticColorChange.src }, { label: "USB Floppy Driver", image: imgEmbroideryMachineYxGpTappingEmbroideryExtraUsbFloppyDriver.src }, { label: "Multiple languages", image: imgEmbroideryMachineYxGpTappingEmbroideryExtraMultipleLanguages.src }],
+    extraBadges: [{ label: "Reduce Maintenance Requirements", image: imgEmbroideryMachineYxGpTappingEmbroideryExtraReduceMaintenanceRequirements.src }, { label: "Reduce Maintenance Frequency", image: imgEmbroideryMachineYxGpTappingEmbroideryExtraReduceMaintenanceFrequency.src }, { label: "50% Fewer Screws", image: imgEmbroideryMachineYxGpTappingEmbroideryExtra50FewerScrews.src }, { label: "Molding Square Girder", image: imgEmbroideryMachineYxGpTappingEmbroideryExtraMoldingSquareGirder.src }],
     engineering: {
       title: "Why it's So Good at Embroidery?",
       subtitle:
         "Every factor that affects the precision of embroidery has been considered. Electric control, motor, transmission system, assembly process, etc. What you can't see are the details.",
       items: [
-        { title: "Motor Upgrade", description: "Better spindle, X-axis, and Y-axis motors — more precise, more stable." },
-        { title: "Synchronous Belt Wheel Upgrade", description: "Aluminum alloy with hard oxidation for high strength and lower inertia." },
-        { title: "Belt Upgrade", description: "Quieter motion and longer service life through optimized meshing." },
-        { title: "Bearing Upgrade", description: "Genuine imported bearings that require no oiling and reduce maintenance." },
-        { title: "Head Upgrade", description: "More silent, durable, and stable at higher speeds." },
-        { title: "Assembly Process", description: "Optimized assembly checks ensure better machine alignment, lower vibration, and stable long-term output quality." },
+        { title: "Motor Upgrade", description: "Better spindle, X-axis, and Y-axis motors — more precise, more stable.", image: yxGpTappingEmbroideryEngMotorUpgrade.src },
+        { title: "Synchronous Belt Wheel Upgrade", description: "Aluminum alloy with hard oxidation for high strength and lower inertia.", image: yxGpTappingEmbroideryEngSynchronousBeltWheelUpgrade.src },
+        { title: "Belt Upgrade", description: "Quieter motion and longer service life through optimized meshing.", image: yxGpTappingEmbroideryEngBeltUpgrade.src },
+        { title: "Bearing Upgrade", description: "Genuine imported bearings that require no oiling and reduce maintenance.", image: yxGpTappingEmbroideryEngBearingUpgrade.src },
+        { title: "Head Upgrade", description: "More silent, durable, and stable at higher speeds.", image: yxGpTappingEmbroideryEngHeadUpgrade.src },
+        { title: "Assembly Process", description: "Optimized assembly checks ensure better machine alignment, lower vibration, and stable long-term output quality.", image: yxGpTappingEmbroideryEngAssemblyProcess.src },
       ],
     },
     valueItems: [
-      { title: "High-speed Stability", description: "Maintain stability at a speed of 1500 RPM" },
-      { title: "Expansive embroidery area", description: "Can easily handle embroidery of various sizes" },
-      { title: "Even Bobbin Thread", description: "Maintain a stable and uniform tension" },
+      { title: "High-speed Stability", description: "Maintain stability at a speed of 1500 RPM", image: yxGpTappingEmbroideryValHighSpeedStability.src },
+      { title: "Expansive embroidery area", description: "Can easily handle embroidery of various sizes", image: yxGpTappingEmbroideryValExpansiveEmbroideryArea.src },
+      { title: "Even Bobbin Thread", description: "Maintain a stable and uniform tension", image: yxGpTappingEmbroideryValEvenBobbinThread.src },
     ],
     productFeatures: [
       "Double capacity tapping embroidery",
@@ -260,6 +374,7 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN embroidery machine?",
       body: "Imagination is infinite, as long as it can fit into the embroidery frame, you can embroider. Using YONTHIN embroidery to make ready-made clothes, bags, hats, shoes, socks, protective covers, etc.",
+    image: imgEmbroideryMachineYxMCapEmbroideryExtraApplication.src,
     },
     usability: [
       {
@@ -278,27 +393,23 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
           "Fuselage and stand are pre-assembled before leaving the factory to save time.",
       },
     ],
-    extraBadges: [
-      "Humanized User Interface",
-      "Automatic Color Change",
-      "Multiple Transmission Methods",
-      "Multi language Operation Version",
-    ],
+    extraBadges: [{ label: "Humanized User Interface", image: imgEmbroideryMachineYxMCapEmbroideryExtraHumanizedUserInterface.src }, { label: "Automatic Color Change", image: imgEmbroideryMachineYxMCapEmbroideryExtraAutomaticColorChange.src }, { label: "Multiple Transmission Methods", image: imgEmbroideryMachineYxMCapEmbroideryExtraMultipleTransmissionMethods.src }, { label: "Multi language Operation Version", image: imgEmbroideryMachineYxMCapEmbroideryExtraMultiLanguageOperationVersion.src }],
+    automationBadges: [{ label: "Reduce Maintenance Requirements", image: imgEmbroideryMachineYxMCapEmbroideryExtraReducedMaintenanceRequirements.src }, { label: "Reduce Maintenance Frequency", image: imgEmbroideryMachineYxMCapEmbroideryExtraReduceMaintenanceFrequency.src }, { label: "Reduce screws by 50% overall", image: imgEmbroideryMachineYxMCapEmbroideryExtraReduceScrewsBy50Overall.src }, { label: "Whole machine assembly", image: imgEmbroideryMachineYxMCapEmbroideryExtraWholeMachineAssembly.src }],
     engineering: {
       title: "Why it's So Good at Embroidery?",
       subtitle:
         "Every factor that affects the precision of embroidery has been considered. Electric control, motor, transmission system, assembly process, etc. What you can't see are the details.",
       items: [
-        { title: "Install the cap hoop", description: "Adjusted with professional molds to ensure it is level and has a consistent height." },
-        { title: "Needle Height Adjustment", description: "The needle height gauge is used to ensure that all the needles are set at the same height." },
-        { title: "Needle Bar Lowest Point", description: "Precision calibration ensures consistent needle bar positioning for stable embroidery quality." },
-        { title: "Motor Upgrade", description: "Enhanced spindle and axis motors for superior stability and precision." },
+        { title: "Install the cap hoop", description: "Adjusted with professional molds to ensure it is level and has a consistent height.", image: yxMCapEmbroideryEngInstallTheCapHoop.src },
+        { title: "Needle Height Adjustment", description: "The needle height gauge is used to ensure that all the needles are set at the same height.", image: yxMCapEmbroideryEngNeedleHeightAdjustment.src },
+        { title: "Needle Bar Lowest Point", description: "Precision calibration ensures consistent needle bar positioning for stable embroidery quality.", image: yxMCapEmbroideryEngNeedleBarLowestPoint.src },
+        { title: "Motor Upgrade", description: "Enhanced spindle and axis motors for superior stability and precision.", image: yxMCapEmbroideryEngMotorUpgrade.src },
       ],
     },
     valueItems: [
-      { title: "Personalized design", description: "Good human-computer interaction design." },
-      { title: "Stable 3D Hat Embroidery", description: "Achieves good results on 1-5mm 3D foam without thread breaks." },
-      { title: "Consistent Penetration", description: "Maintain consistency at the center seam." },
+      { title: "Personalized design", description: "Good human-computer interaction design.", image: yxMCapEmbroideryValPersonalizedDesign.src },
+      { title: "Stable 3D Hat Embroidery", description: "Achieves good results on 1-5mm 3D foam without thread breaks.", image: yxMCapEmbroideryValStable3DHatEmbroidery.src },
+      { title: "Consistent Penetration", description: "Maintain consistency at the center seam.", image: yxMCapEmbroideryValConsistentPenetration.src },
     ],
     productFeatures: [
       "Ready-made cloths, trousers, hats, shoes, jackets, bags, cutting pieces can be switched and embroidered at will.",
@@ -351,6 +462,7 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN embroidery machine?",
       body: "Imagination is infinite, as long as it can fit into the embroidery frame, you can embroider. Using YONTHIN embroidery to make ready-made clothes, bags, hats, shoes, socks, protective covers, etc.",
+    image: imgEmbroideryMachineYxMSingleHeadCapExtraApplication.src,
     },
     usability: [
       {
@@ -369,21 +481,22 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
           "Whether it is the operation on the control panel or the functions built into the machine, YONTHIN provides great convenience.",
       },
     ],
-    extraBadges: ["Standard Packaging", "Accessories & Tool box", "50% Fewer Screws", "Modular Installation"],
+    extraBadges: [{ label: "Standard Packaging", image: imgEmbroideryMachineYxMSingleHeadCapExtraStandardPackaging.src }, { label: "Accessories & Tool box", image: imgEmbroideryMachineYxMSingleHeadCapExtraAccesoriesToolBox.src }, { label: "50% Fewer Screws", image: imgEmbroideryMachineYxMSingleHeadCapExtra50FewerScrews.src }, { label: "Modular Installation", image: imgEmbroideryMachineYxMSingleHeadCapExtraModularInstallation.src }],
+    automationBadges: [{ label: "Reduce Maintenance Requirements", image: imgEmbroideryMachineYxMSingleHeadCapExtraReduceMaintenanceRequirements.src }, { label: "Reduce Maintenance Frequency", image: imgEmbroideryMachineYxMSingleHeadCapExtraReduceMaintenanceFrequency.src }, { label: "LCD Touch Screen", image: imgEmbroideryMachineYxMSingleHeadCapExtraLcdTouchScreen.src }, { label: "Auto Color Change", image: imgEmbroideryMachineYxMSingleHeadCapExtraAutoColorChange.src }, { label: "Universal wheels, easy to move", image: imgEmbroideryMachineYxMSingleHeadCapExtraUniversalWheelsEasyToMove.src }, { label: "Multi language Operation Version", image: imgEmbroideryMachineYxMSingleHeadCapExtraMultiLanguageOperationVersion.src }],
     qualitySection: {
       title: "How To Ensure Uniform Assembly Of Each Machine?",
       body: "We use professional fixtures and molds during the assembly process to ensure precise assembly, improve product stability, and ensure consistent quality.",
       items: [
-        { title: "Y-Axis Rail Installation", description: "The Y-axis guide rail is adjusted with a professional mold, and the screws are tightened to the same torque to ensure horizontal parallelism." },
-        { title: "Head Installation", description: "Professional fixtures ensure precise head alignment for consistent embroidery quality." },
-        { title: "Needle Bar Lowest Point", description: "Precision calibration ensures consistent needle bar positioning for stable embroidery quality." },
-        { title: "Needle Height Adjustment", description: "The needle height gauge is used to ensure that all the needles are set at the same height." },
+        { title: "Y-Axis Rail Installation", description: "The Y-axis guide rail is adjusted with a professional mold, and the screws are tightened to the same torque to ensure horizontal parallelism.", image: yxMSingleHeadCapEngYAxisRailInstallation.src },
+        { title: "Head Installation", description: "Professional fixtures ensure precise head alignment for consistent embroidery quality.", image: yxMSingleHeadCapEngHeadInstallation.src },
+        { title: "Needle Bar Lowest Point", description: "Precision calibration ensures consistent needle bar positioning for stable embroidery quality.", image: yxMSingleHeadCapEngNeedleBarLowestPoint.src },
+        { title: "Needle Height Adjustment", description: "The needle height gauge is used to ensure that all the needles are set at the same height.", image: yxMSingleHeadCapEngNeedleHeightAdjustment.src },
       ],
     },
     valueItems: [
-      { title: "Personalized design", description: "Good human-computer interaction design." },
-      { title: "Stable 3D Hat Embroidery", description: "Achieves good results on 1-5mm 3D foam without thread breaks." },
-      { title: "Consistent Penetration", description: "Maintain consistency at the center seam." },
+      { title: "Personalized design", description: "Good human-computer interaction design.", image: yxMSingleHeadCapValPersonalizedDesign.src },
+      { title: "Stable 3D Hat Embroidery", description: "Achieves good results on 1-5mm 3D foam without thread breaks.", image: yxMSingleHeadCapValStable3DHatEmbroidery.src },
+      { title: "Consistent Penetration", description: "Maintain consistency at the center seam.", image: yxMSingleHeadCapValConsistentPenetration.src },
     ],
     productFeatures: [
       "Yonthin fashion custom intelligent special type embroidery machine: Ready-made clothes, trousers, hats, shoes, jackets, bags, cutting pieces can be switched and embroidered at will.",
@@ -439,6 +552,7 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
     application: {
       title: "What can I do with YONTHIN embroidery machine?",
       body: "Imagination is infinite, as long as it can fit into the embroidery frame, you can embroider. Using YONTHIN embroidery to make ready-made clothes, bags, hats, shoes, socks, protective covers, etc.",
+    image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraApplication.src,
     },
     usability: [
       {
@@ -457,21 +571,22 @@ export const embroideryDetailContent: EmbroideryDetailContent[] = [
           "Whether it is the operation on the control panel or the functions built into the machine, YONTHIN provides great convenience.",
       },
     ],
-    extraBadges: ["Standard Packaging", "Accessories & Tool box", "50% Fewer Screws", "Modular Installation"],
+    extraBadges: [{ label: "Standard Packaging", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraStandardPackaging.src }, { label: "Accessories & Tool box", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraAccesoriesToolBox.src }, { label: "50% Fewer Screws", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtra50FewerScrews.src }, { label: "Modular Installation", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraModularInstallation.src }],
+    automationBadges: [{ label: "Reduce Maintenance Requirements", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraReduceMaintenanceRequirements.src }, { label: "Reduce Maintenance Frequency", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraReduceMaintenanceFrequency.src }, { label: "LCD Touch Screen", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraLcdTouchScreen.src }, { label: "Auto Color Change", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraAutoColorChange.src }, { label: "Universal wheels, easy to move", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraUniversalWheelsEasyToMove.src }, { label: "Multi language Operation Version", image: imgEmbroideryMachineXMTwoHeadEmbroideryExtraMultiLanguageOperationVersion.src }],
     qualitySection: {
       title: "How To Ensure Uniform Assembly Of Each Machine?",
       body: "We use professional fixtures and molds during the assembly process to ensure precise assembly, improve product stability, and ensure consistent quality.",
       items: [
-        { title: "Needle Height Adjustment", description: "The needle height gauge is used to ensure that all the needles are set at the same height." },
-        { title: "Head Installation", description: "Professional fixtures ensure precise head alignment for consistent embroidery quality." },
-        { title: "Needle Bar Lowest Point", description: "Precision calibration ensures consistent needle bar positioning for stable embroidery quality." },
-        { title: "Y-Axis Rail Installation", description: "The Y-axis guide rail is adjusted with a professional mold, and the screws are tightened to the same torque to ensure horizontal parallelism." },
+        { title: "Needle Height Adjustment", description: "The needle height gauge is used to ensure that all the needles are set at the same height.", image: xMTwoHeadEmbroideryEngNeedleHeightAdjustment.src },
+        { title: "Head Installation", description: "Professional fixtures ensure precise head alignment for consistent embroidery quality.", image: xMTwoHeadEmbroideryEngHeadInstallation.src },
+        { title: "Needle Bar Lowest Point", description: "Precision calibration ensures consistent needle bar positioning for stable embroidery quality.", image: xMTwoHeadEmbroideryEngNeedleBarLowestPoint.src },
+        { title: "Y-Axis Rail Installation", description: "The Y-axis guide rail is adjusted with a professional mold, and the screws are tightened to the same torque to ensure horizontal parallelism.", image: xMTwoHeadEmbroideryEngYAxisRailInstallation.src },
       ],
     },
     valueItems: [
-      { title: "Personalized design", description: "Good human-computer interaction design." },
-      { title: "Stable 3D Hat Embroidery", description: "Achieves good results on 1-5mm 3D foam without thread breaks." },
-      { title: "Consistent Penetration", description: "Maintain consistency at the center seam." },
+      { title: "Personalized design", description: "Good human-computer interaction design.", image: xMTwoHeadEmbroideryValPersonalizedDesign.src },
+      { title: "Stable 3D Hat Embroidery", description: "Achieves good results on 1-5mm 3D foam without thread breaks.", image: xMTwoHeadEmbroideryValStable3DHatEmbroidery.src },
+      { title: "Consistent Penetration", description: "Maintain consistency at the center seam.", image: xMTwoHeadEmbroideryValConsistentPenetration.src },
     ],
     productFeatures: [
       "Pattern auto-rotate with 180 degrees after changing cap frame unit.",

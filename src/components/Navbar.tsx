@@ -4,12 +4,14 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { categories } from "@/data/products";
 
 const navItems = [
-  { label: "Home", path: "/" },
+  { label: "Home", path: "/", linkPath: "/" },
   {
     label: "About Us",
     path: "/about",
+    linkPath: "/about/company-profile",
     children: [
       { label: "Company Profile", path: "/about/company-profile" },
       { label: "Managing Director's Profile", path: "/about/managing-director" },
@@ -19,10 +21,16 @@ const navItems = [
       { label: "Core Values", path: "/about/core-values" },
     ],
   },
-  { label: "Products", path: "/products" },
+  {
+    label: "Products",
+    path: "/products",
+    linkPath: "/products",
+    children: categories.map((cat) => ({ label: cat.name, path: `/products/${cat.slug}` })),
+  },
   {
     label: "Media",
     path: "/media",
+    linkPath: "/media/news",
     children: [
       { label: "News", path: "/media/news" },
       { label: "Photo Gallery", path: "/media/photo-gallery" },
@@ -32,13 +40,14 @@ const navItems = [
   {
     label: "Support",
     path: "/support",
+    linkPath: "/support/faq",
     children: [
       { label: "FAQ", path: "/support/faq" },
       { label: "Downloads", path: "/support/downloads" },
       { label: "Service Request", path: "/support/service-request" },
     ],
   },
-  { label: "Contact", path: "/contact" },
+  { label: "Contact", path: "/contact", linkPath: "/contact" },
 ];
 
 const Navbar = () => {
@@ -64,7 +73,7 @@ const Navbar = () => {
               onMouseLeave={() => setOpenDropdown(null)}
             >
               <Link
-                href={item.path}
+                href={item.linkPath}
                 className={`flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:text-accent ${
                   pathname === item.path || pathname.startsWith(item.path + "/")
                     ? "text-accent"
@@ -75,7 +84,7 @@ const Navbar = () => {
                 {item.children && <ChevronDown className="h-3 w-3" />}
               </Link>
               {item.children && openDropdown === item.label && (
-                <ul className="absolute left-0 top-full min-w-[200px] rounded-md border border-border bg-background py-1 shadow-lg">
+                <ul className="absolute left-0 top-full min-w-[240px] rounded-md border border-border bg-background py-1 shadow-lg">
                   {item.children.map((child) => (
                     <li key={child.path}>
                       <Link
@@ -109,7 +118,7 @@ const Navbar = () => {
             {navItems.map((item) => (
               <li key={item.label}>
                 <Link
-                  href={item.path}
+                  href={item.linkPath}
                   onClick={() => setMobileOpen(false)}
                   className="block rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-muted hover:text-accent"
                 >

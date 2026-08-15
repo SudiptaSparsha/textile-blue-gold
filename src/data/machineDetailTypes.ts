@@ -1,7 +1,10 @@
 export interface MachineDetailCard {
   title: string;
   description: string;
+  image?: string;
 }
+
+export type MachineBadge = string | { label: string; image?: string };
 
 export interface MachineParameterColumn {
   key: string;
@@ -17,11 +20,12 @@ export interface MachineDetailContent {
   application: {
     title: string;
     body: string;
+    image?: string;
   };
   usability?: MachineDetailCard[];
   usabilityTitle?: string;
-  automationBadges?: string[];
-  extraBadges?: string[];
+  automationBadges?: MachineBadge[];
+  extraBadges?: MachineBadge[];
   engineering?: {
     title: string;
     subtitle: string;
