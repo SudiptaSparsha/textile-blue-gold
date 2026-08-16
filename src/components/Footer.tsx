@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Phone, Mail, MapPin, Facebook, Linkedin, Youtube } from "lucide-react";
+import { Phone, Mail, MapPin, Facebook, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -14,13 +14,22 @@ const Footer = () => {
               Delivering top-tier technical services and high-quality industrial machinery to textile factories and manufacturing plants across Bangladesh since 2008.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="rounded-full bg-primary-foreground/10 p-2 transition-colors hover:bg-accent">
+              <a
+                href="https://www.facebook.com/share/18FPpRPTHY/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Textile Blue Gold on Facebook"
+                className="rounded-full bg-primary-foreground/10 p-2 transition-colors hover:bg-accent"
+              >
                 <Facebook className="h-4 w-4" />
               </a>
-              <a href="#" className="rounded-full bg-primary-foreground/10 p-2 transition-colors hover:bg-accent">
-                <Linkedin className="h-4 w-4" />
-              </a>
-              <a href="#" className="rounded-full bg-primary-foreground/10 p-2 transition-colors hover:bg-accent">
+              <a
+                href="https://youtube.com/@yonthinbangladesh?si=avJQDJvTg6iYcyt5"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Textile Blue Gold on YouTube"
+                className="rounded-full bg-primary-foreground/10 p-2 transition-colors hover:bg-accent"
+              >
                 <Youtube className="h-4 w-4" />
               </a>
             </div>
@@ -43,6 +52,7 @@ const Footer = () => {
               <li><Link href="/products/air-compressors" className="transition-colors hover:text-accent">Air Compressors</Link></li>
               <li><Link href="/products/knitting-machines" className="transition-colors hover:text-accent">Knitting Machines</Link></li>
               <li><Link href="/products/embroidery-machines" className="transition-colors hover:text-accent">Embroidery Machines</Link></li>
+              <li><Link href="/products/generators" className="transition-colors hover:text-accent">Generators</Link></li>
             </ul>
           </div>
 

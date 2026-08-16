@@ -5,6 +5,7 @@ import SectionWrapper from "@/components/SectionWrapper";
 import { getProductBySlug, categories } from "@/data/products";
 import { getMachineBreadcrumbs, getMachineDetailContent, isMachineDetailPage } from "@/data/machineDetail";
 import MachineDetailPage from "@/components/products/MachineDetailPage";
+import ProductImagePopup from "@/components/products/ProductImagePopup";
 
 export default async function ProductDetail({ params }: { params: Promise<{ categorySlug: string; slug: string }> }) {
   const { slug } = await params;
@@ -55,7 +56,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ cate
 
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="overflow-hidden rounded-lg border border-border bg-muted">
-            <img src={product.image} alt={product.name} className="h-full w-full object-cover" />
+            <ProductImagePopup src={product.image} alt={product.name} title={product.name} />
           </div>
 
           <div>
@@ -79,9 +80,11 @@ export default async function ProductDetail({ params }: { params: Promise<{ cate
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/contact" className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-colors hover:bg-accent/90">
-                Request a Quote
-              </Link>
+              {product.categorySlug !== "generators" && (
+                <Link href="/contact" className="inline-flex items-center gap-2 rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-colors hover:bg-accent/90">
+                  Request a Quote
+                </Link>
+              )}
               {product.optionalDevices && (
                 <div className="w-full">
                   <h3 className="mb-2 mt-6 font-semibold">Optional Attachments</h3>
