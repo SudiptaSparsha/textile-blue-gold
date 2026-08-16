@@ -3,7 +3,7 @@
 import { useState } from "react";
 import PageBanner from "@/components/PageBanner";
 import SectionWrapper from "@/components/SectionWrapper";
-import { MapPin, Phone, Mail, Clock, Globe } from "lucide-react";
+import { MapPin, Phone, Mail, Clock } from "lucide-react";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
@@ -59,15 +59,6 @@ const Contact = () => {
                   <p className="font-medium">Email</p>
                   <p className="text-sm text-muted-foreground">bangladeshyonthin@gmail.com</p>
                   <p className="text-sm text-muted-foreground">aka.pse@gmail.com</p>
-                </div>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-accent/10">
-                  <Globe className="h-5 w-5 text-accent" />
-                </div>
-                <div>
-                  <p className="font-medium">Website</p>
-                  <p className="text-sm text-muted-foreground">www.pselbd.net</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">

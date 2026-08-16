@@ -27,7 +27,17 @@ const ProductListing = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const category = categories.find((c) => c.slug === categorySlug);
-  const items = getProductsByCategory(categorySlug || "");
+  const allItems = getProductsByCategory(categorySlug || "");
+
+  const brands = useMemo(
+    () => Array.from(new Set(allItems.map((p) => p.brand).filter((b): b is string => Boolean(b)))),
+    [allItems],
+  );
+  const activeBrand = searchParams.get("brand");
+  const items = useMemo(
+    () => (activeBrand ? allItems.filter((p) => p.brand === activeBrand) : allItems),
+    [allItems, activeBrand],
+  );
 
   const totalPages = Math.max(1, Math.ceil(items.length / PAGE_SIZE));
   const requestedPage = Number(searchParams.get("page") ?? "1");
@@ -46,6 +56,14 @@ const ProductListing = () => {
     const start = (currentPage - 1) * PAGE_SIZE;
     return items.slice(start, start + PAGE_SIZE);
   }, [items, currentPage]);
+
+  const selectBrand = (brand: string | null) => {
+    const params = new URLSearchParams(searchParams.toString());
+    if (brand) params.set("brand", brand);
+    else params.delete("brand");
+    params.delete("page");
+    router.push(`/products/${categorySlug}${params.toString() ? `?${params.toString()}` : ""}`, { scroll: false });
+  };
 
   const goToPage = (page: number) => {
     const target = Math.min(Math.max(1, page), totalPages);
@@ -82,6 +100,33 @@ const ProductListing = () => {
         <div className="mx-auto mb-10 max-w-xl">
           <ProductSearch placeholder="Search machines by name..." />
         </div>
+
+        {brands.length > 0 && (
+          <div className="mb-10 flex flex-wrap justify-center gap-2">
+            <button
+              type="button"
+              onClick={() => selectBrand(null)}
+              className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+                !activeBrand ? "bg-accent text-accent-foreground" : "bg-muted text-muted-foreground hover:bg-muted/70"
+              }`}
+            >
+              All Brands
+            </button>
+            {brands.map((brand) => (
+              <button
+                key={brand}
+                type="button"
+                onClick={() => selectBrand(brand)}
+                className={`rounded-full px-5 py-2 text-sm font-medium transition-colors ${
+                  activeBrand === brand ? "bg-accent text-accent-foreground" : "bg-muted text-muted-foreground hover:bg-muted/70"
+                }`}
+              >
+                {brand}
+              </button>
+            ))}
+          </div>
+        )}
+
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {pageItems.map((p) => (
             <ProductCard key={p.id} product={p} />

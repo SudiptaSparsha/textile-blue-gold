@@ -4,6 +4,7 @@ import { getCompressorDetailContent, compressorDetailSlugs } from "@/data/compre
 import { getEmbroideryGalleryImages } from "@/data/embroideryImages";
 import { getKnittingGalleryImages } from "@/data/knittingImages";
 import { getCompressorGalleryImages } from "@/data/compressorImages";
+import { getGeneratorGalleryImages } from "@/data/generatorImages";
 import type { MachineDetailContent } from "@/data/machineDetailTypes";
 import type { GalleryImage } from "@/data/embroideryImages";
 
@@ -19,7 +20,9 @@ export const getMachineGalleryImages = (slug: string): GalleryImage[] => {
   if (embroideryImages.length > 0) return embroideryImages;
   const knittingImages = getKnittingGalleryImages(slug);
   if (knittingImages.length > 0) return knittingImages;
-  return getCompressorGalleryImages(slug);
+  const compressorImages = getCompressorGalleryImages(slug);
+  if (compressorImages.length > 0) return compressorImages;
+  return getGeneratorGalleryImages(slug);
 };
 
 export const getMachineBreadcrumbs = (slug: string, productName: string, categorySlug: string) => {
