@@ -21,13 +21,6 @@ const heroSlides = [
   { src: heroSlide4.src, alt: "YONTHIN single head embroidery machine" },
 ];
 
-const stats = [
-  { value: "100k+", label: "Sqm Factory" },
-  { value: "500+", label: "Experts" },
-  { value: "160+", label: "Patents" },
-  { value: "24/7", label: "Support" },
-];
-
 const industries = [
   { icon: Truck, title: "Garment Manufacturing", desc: "End-to-end machinery solutions for industrial plants" },
   { icon: Globe, title: "Textile Export", desc: "Propelling the global reach of local manufacturers" },
@@ -126,18 +119,6 @@ const Index = () => {
           </div>
         </div>
       </section>
-
-      {/* Stats */}
-      <div className="bg-accent py-6">
-        <div className="container grid grid-cols-2 gap-6 md:grid-cols-4">
-          {stats.map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-2xl font-bold text-accent-foreground md:text-3xl">{s.value}</div>
-              <div className="text-sm text-accent-foreground/80">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Core Machinery */}
       <SectionWrapper>

@@ -5,6 +5,9 @@ import chenilleImgObj from "@/assets/product-chenille.png";
 import generatorImgObj from "@/assets/generators/cummins/cummins-c55d5/cummins-c55d5-1.jpg";
 import perkinsDieselImgObj from "@/assets/generators/perkins/perkins-diesel-generator/perkins-diesel-generator-1.jpg";
 import perkinsNaturalGasImgObj from "@/assets/generators/perkins/perkins-natural-gas-generator/perkins-natural-gas-generator-1.png";
+import embroideryCategoryImgObj from "@/assets/embroidery-machine/yx-g-high-speed-flat-embroidery-machine/yx-g-high-speed-flat-embroidery-machine-4.jpg";
+import knittingCategoryImgObj from "@/assets/knitting-machine/high-speed-open-width-knitting-machine/high-speed-open-width-knitting-machine-1.jpg";
+import compressorCategoryImgObj from "@/assets/air-compressor/4009n-50lp/4009n-50lp-1.webp";
 
 const compressorImg = compressorImgObj.src;
 const knittingImg = knittingImgObj.src;
@@ -13,6 +16,9 @@ const chenilleImg = chenilleImgObj.src;
 const generatorImg = generatorImgObj.src;
 const perkinsDieselImg = perkinsDieselImgObj.src;
 const perkinsNaturalGasImg = perkinsNaturalGasImgObj.src;
+const embroideryCategoryImg = embroideryCategoryImgObj.src;
+const knittingCategoryImg = knittingCategoryImgObj.src;
+const compressorCategoryImg = compressorCategoryImgObj.src;
 
 export interface Product {
   id: string;
@@ -60,21 +66,21 @@ export const categories: ProductCategory[] = [
     name: "Embroidery Machines",
     slug: "embroidery-machines",
     description: "State-of-the-art computerized embroidery solutions for intricate designs and high-volume production",
-    image: embroideryImg,
+    image: embroideryCategoryImg,
     productCount: 6,
   },
   {
     name: "Knitting Machines",
     slug: "knitting-machines",
     description: "Advanced circular and flat knitting machinery for seamless and high-quality fabric manufacturing",
-    image: knittingImg,
+    image: knittingCategoryImg,
     productCount: 7,
   },
   {
     name: "Air Compressors",
     slug: "air-compressors",
     description: "Reliable industrial air supply systems for consistent garment factory operations",
-    image: compressorImg,
+    image: compressorCategoryImg,
     productCount: 68,
   },
   {
