@@ -4,12 +4,23 @@ import { useState } from "react";
 import PageBanner from "@/components/PageBanner";
 import SectionWrapper from "@/components/SectionWrapper";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 const Contact = () => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const message = [
+      "New contact form submission:",
+      `Name: ${data.get("name")}`,
+      `Email: ${data.get("email")}`,
+      `Phone: ${data.get("phone") || "-"}`,
+      `Subject: ${data.get("subject")}`,
+      `Message: ${data.get("message")}`,
+    ].join("\n");
+    window.open(getWhatsAppLink(message), "_blank");
     setSubmitted(true);
   };
 
@@ -79,31 +90,31 @@ const Contact = () => {
               <div className="rounded-lg border border-border bg-card p-8 text-center">
                 <div className="mx-auto mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-accent/10 text-3xl">✓</div>
                 <h3 className="text-xl font-bold">Message Sent!</h3>
-                <p className="mt-2 text-muted-foreground">Thank you for reaching out. We'll get back to you shortly.</p>
+                <p className="mt-2 text-muted-foreground">We've opened WhatsApp with your message. Send it across and we'll get back to you shortly.</p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-4 rounded-lg border border-border bg-card p-6 md:p-8">
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div>
                     <label className="mb-1 block text-sm font-medium">Full Name</label>
-                    <input required className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
+                    <input name="name" required className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
                   </div>
                   <div>
                     <label className="mb-1 block text-sm font-medium">Email</label>
-                    <input type="email" required className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
+                    <input name="email" type="email" required className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
                   </div>
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-medium">Phone</label>
-                  <input className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
+                  <input name="phone" className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-medium">Subject</label>
-                  <input required className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
+                  <input name="subject" required className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
                 </div>
                 <div>
                   <label className="mb-1 block text-sm font-medium">Message</label>
-                  <textarea required rows={5} className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
+                  <textarea name="message" required rows={5} className="w-full rounded-md border border-input bg-background px-3 py-2 text-sm" />
                 </div>
                 <button type="submit" className="w-full rounded-md bg-accent px-6 py-3 font-semibold text-accent-foreground transition-colors hover:bg-accent/90">
                   Send Message

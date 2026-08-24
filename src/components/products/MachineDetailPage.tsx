@@ -6,6 +6,7 @@ import { ArrowLeft, CheckCircle, ChevronLeft, ChevronRight, X } from "lucide-rea
 import type { Product, ProductCategory } from "@/data/products";
 import type { MachineDetailContent } from "@/data/machineDetailTypes";
 import { getMachineGalleryImages } from "@/data/machineDetail";
+import { getWhatsAppLink } from "@/lib/whatsapp";
 
 interface MachineDetailPageProps {
   product: Product;
@@ -31,6 +32,20 @@ export default function MachineDetailPage({ product, category, content }: Machin
   const slide = galleryImages[activeSlide] ?? galleryImages[0];
   const lightboxOpen = lightboxIndex !== null;
   const activeLightboxImage = lightboxIndex === null ? null : galleryImages[lightboxIndex];
+
+  const handleInquirySubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const message = [
+      "New product inquiry:",
+      `Product: ${data.get("product")}`,
+      `E-mail: ${data.get("email")}`,
+      `Phone/WhatsApp: ${data.get("phone") || "-"}`,
+      `Message: ${data.get("message")}`,
+    ].join("\n");
+    window.open(getWhatsAppLink(message), "_blank");
+    e.currentTarget.reset();
+  };
   const popupOpen = imagePopup !== null;
   const featureMidpoint = Math.ceil(content.productFeatures.length / 2);
   const featureColumns = [
@@ -474,22 +489,22 @@ export default function MachineDetailPage({ product, category, content }: Machin
         <section className="rounded-xl border border-blue-200 bg-gradient-to-br from-blue-50 via-white to-orange-50 p-6 md:p-8">
           <h3 className="text-2xl font-bold text-slate-900 md:text-3xl">Know us, Choose us, Be us</h3>
           <p className="mt-3 text-slate-700">Sign up to receive the latest news, announcements, and promotions!</p>
-          <form className="mt-6 grid gap-4 md:grid-cols-2">
+          <form onSubmit={handleInquirySubmit} className="mt-6 grid gap-4 md:grid-cols-2">
             <label className="text-sm font-medium md:col-span-2">
               Products
-              <input type="text" defaultValue={content.formProductName} className={inputClass} />
+              <input type="text" name="product" defaultValue={content.formProductName} className={inputClass} />
             </label>
             <label className="text-sm font-medium">
               E-mail <span className="text-red-500">*</span>
-              <input type="email" required className={inputClass} />
+              <input type="email" name="email" required className={inputClass} />
             </label>
             <label className="text-sm font-medium">
               Phone/WhatsApp
-              <input type="text" className={inputClass} />
+              <input type="text" name="phone" className={inputClass} />
             </label>
             <label className="text-sm font-medium md:col-span-2">
               Message <span className="text-red-500">*</span>
-              <textarea required rows={4} className={inputClass} placeholder="Tell us your requirements." />
+              <textarea required name="message" rows={4} className={inputClass} placeholder="Tell us your requirements." />
             </label>
             <div className="md:col-span-2">
               <button
