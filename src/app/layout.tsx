@@ -8,7 +8,7 @@ import ScrollToTopButton from "@/components/ScrollToTopButton";
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'Textile Bright Hub',
+  title: 'Textile Blue Gold',
   description: 'Authorized importer of Yonthin garment machinery',
 };
 
