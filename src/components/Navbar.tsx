@@ -6,6 +6,9 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ChevronDown, Search } from "lucide-react";
 import { categories } from "@/data/products";
 import ProductSearch from "@/components/ProductSearch";
+import logoFullObj from "@/assets/logo/textile-blue-gold-logo-full.png";
+
+const logoFull = logoFullObj.src;
 
 const navItems = [
   { label: "Home", path: "/", linkPath: "/" },
@@ -93,9 +96,8 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-1 text-xl font-bold">
-          <span className="text-primary">Textile</span>
-          <span className="text-accent">Blue Gold</span>
+        <Link href="/" className="flex items-center">
+          <img src={logoFull} alt="Textile Blue Gold" className="h-10 w-auto md:h-12" />
         </Link>
 
         {/* Desktop Nav */}

@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { Phone, Mail, MapPin, Facebook, Youtube } from "lucide-react";
+import logoIconObj from "@/assets/logo/textile-blue-gold-icon-footer.png";
+
+const logoIcon = logoIconObj.src;
 
 const Footer = () => {
   return (
@@ -7,9 +10,12 @@ const Footer = () => {
       <div className="container py-12 md:py-16">
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <h3 className="mb-4 text-xl font-bold">
-              Textile <span className="text-accent">Blue Gold</span>
-            </h3>
+            <div className="mb-4 flex items-center gap-2">
+              <img src={logoIcon} alt="Textile Blue Gold" className="h-10 w-10" />
+              <h3 className="text-xl font-bold">
+                Textile <span className="text-accent">Blue Gold</span>
+              </h3>
+            </div>
             <p className="mb-4 text-sm text-primary-foreground/80">
               Delivering top-tier technical services and high-quality industrial machinery to textile factories and manufacturing plants across Bangladesh since 2008.
             </p>
