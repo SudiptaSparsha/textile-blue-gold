@@ -7,7 +7,7 @@ import perkinsDieselImgObj from "@/assets/generators/perkins/perkins-diesel-gene
 import perkinsNaturalGasImgObj from "@/assets/generators/perkins/perkins-natural-gas-generator/perkins-natural-gas-generator-1.png";
 import embroideryCategoryImgObj from "@/assets/embroidery-machine/yx-g-high-speed-flat-embroidery-machine/yx-g-high-speed-flat-embroidery-machine-4.jpg";
 import knittingCategoryImgObj from "@/assets/knitting-machine/high-speed-open-width-knitting-machine/high-speed-open-width-knitting-machine-1.jpg";
-import compressorCategoryImgObj from "@/assets/air-compressor/4009n-50lp/4009n-50lp-1.webp";
+import compressorCategoryImgObj from "@/assets/air-compressor/e-series/e-series-1.jpg";
 
 const compressorImg = compressorImgObj.src;
 const knittingImg = knittingImgObj.src;
@@ -63,18 +63,18 @@ export interface ProductCategory {
 
 export const categories: ProductCategory[] = [
   {
-    name: "Embroidery Machines",
-    slug: "embroidery-machines",
-    description: "State-of-the-art computerized embroidery solutions for intricate designs and high-volume production",
-    image: embroideryCategoryImg,
-    productCount: 6,
-  },
-  {
     name: "Knitting Machines",
     slug: "knitting-machines",
     description: "Advanced circular and flat knitting machinery for seamless and high-quality fabric manufacturing",
     image: knittingCategoryImg,
     productCount: 7,
+  },
+  {
+    name: "Embroidery Machines",
+    slug: "embroidery-machines",
+    description: "State-of-the-art computerized embroidery solutions for intricate designs and high-volume production",
+    image: embroideryCategoryImg,
+    productCount: 6,
   },
   {
     name: "Air Compressors",
