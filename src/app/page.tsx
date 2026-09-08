@@ -13,12 +13,14 @@ import heroSlide1 from "@/assets/hero-slider/259666c3-7b6c-466e-ace2-0f1958bd222
 import heroSlide2 from "@/assets/hero-slider/84bf0ba8-f14b-481d-af09-5af3157fd093.jpg";
 import heroSlide3 from "@/assets/hero-slider/888717e6-c5cd-4d2d-ae40-e861ba1b8eb4.png";
 import heroSlide4 from "@/assets/hero-slider/d30dda10-4bc3-4874-beb0-65fd7f09947f.png";
+import heroSlide5 from "@/assets/air-compressor/category/air-compressor-lineup.png";
 
 const heroSlides = [
   { src: heroSlide1.src, alt: "YONTHIN cap embroidery machine series" },
   { src: heroSlide2.src, alt: "YONTHIN high speed embroidery machine" },
   { src: heroSlide3.src, alt: "Textile Blue Gold factory facility" },
   { src: heroSlide4.src, alt: "YONTHIN single head embroidery machine" },
+  { src: heroSlide5.src, alt: "LUOWEI industrial air compressor lineup" },
 ];
 
 const industries = [

@@ -27,6 +27,10 @@ import imgKnittingMachineThreeThreadFleeceKnittingExtraApplication from "@/asset
 import imgKnittingMachineComputerizedJacquardKnittingExtraApplication from "@/assets/knitting-machine/computerized-jacquard-knitting/extra/application.jpg";
 import imgKnittingMachineTerryVelourKnittingExtraApplication from "@/assets/knitting-machine/terry-velour-knitting/extra/application.jpg";
 import imgKnittingMachineYxQFlatKnittingSeriesExtraApplication from "@/assets/knitting-machine/yx-q-flat-knitting-series/extra/application.jpg";
+import imgKnittingMachineAutoStripperExtraApplication from "@/assets/knitting-machine/auto-stripper-jersey-circular-knitting-machine/extra/application.jpg";
+import imgKnittingMachineShearingExtraApplication from "@/assets/knitting-machine/shearing-circular-knitting-machine/extra/application.jpg";
+import imgKnittingMachineScubaExtraApplication from "@/assets/knitting-machine/scuba-knitting-machine/extra/application.jpg";
+import imgKnittingMachineSmallSizeExtraApplication from "@/assets/knitting-machine/high-speed-small-size-knitting-machine/extra/application.jpg";
 
 const knittingEngineeringSubtitle =
   "Every factor affecting knitting accuracy has been taken into consideration. Control system, transmission system, motor, cam, etc. Where you cannot see are details.";
@@ -422,6 +426,195 @@ export const knittingDetailContent: MachineDetailContent[] = [
       footerNote: "* Machine speed: segmental adjustment, maximum 1.6m/s with 255 programmable speed segments. Braiding system: single-head and three-system. Shaking table: motor driven, maximum 2 inches.",
     },
     formProductName: "YX-Q Flat Knitting Machine Series",
+  },
+  {
+    slug: "auto-stripper-jersey-knitting",
+    breadcrumbCategoryLabel: "Circular Knitting Machine",
+    breadcrumbSubcategory: "Auto Stripper Jersey Circular Knitting Machine",
+    intro:
+      "Auto stripper circular knitting machine that knits 3:1 and 2:1 automatic striped fleece and plain fleece fabrics. A programmable ring of yarn-carrier fingers switches between multiple yarn colors automatically, without manual yarn changes.",
+    highlights: [
+      "Knits sportswear, underwear, and pajama fabrics with automatic color stripes",
+      "Produces uncut velvet, loop velvet, double brushed felt, and poodle cloth",
+      "Convertible to single jersey, three-thread fleece, or terry machine",
+      "Advanced equipment support",
+      "High standard quality control",
+      "Multiple optional devices",
+    ],
+    application: {
+      title: "What can I do with YONTHIN circular knitting machine?",
+      body: "Imagination is infinite, as long as you can imagine, you can knit. Use Yonthin's auto stripper fabric to make striped pajamas, loungewear, sportswear, and colorful velvet or fleece garments.",
+      image: imgKnittingMachineAutoStripperExtraApplication.src,
+    },
+    engineering: {
+      title: "Why is it good at knitting?",
+      subtitle: knittingEngineeringSubtitle,
+      items: standardEngineeringItems,
+    },
+    valueItems: valuePillars,
+    valueSectionTitle: "Core Machine Advantages",
+    productFeatures: [
+      "Programmable yarn-carrier ring automatically switches colors for striped and jacquard-look fabrics.",
+      "Strong interchangeability — by changing heart parts, the machine converts to single jersey, three-thread fleece, or terry.",
+      "All cams and cam boxes are made of imported alloy steel, engraved and abraded by a CNC processing center.",
+      "Knits uncut velvet, loop velvet (single or double), double brush felt, poodle cloth, and colorful polyester fabric.",
+      "Compatible with cotton, synthetic fiber, blending, silk, and artificial wool yarns.",
+      "Compact frame suited for sportswear, underwear, and pajama fabric production lines.",
+    ],
+    parameters: {
+      rowKey: "diameter",
+      columns: knittingParamColumns,
+      rows: [
+        { diameter: "30\"-38\" (YX-HS-C6)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25 R.P.M" },
+        { diameter: "30\"-38\" (YX-HS-C4)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25 R.P.M" },
+        { diameter: "30\"-38\" (YX-HD-C6)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25 R.P.M" },
+        { diameter: "30\"-38\" (YX-HD-C4)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25 R.P.M" },
+      ],
+    },
+    equipmentMatrix: {
+      standard: standardEquipment,
+      optional: ["Lycra Attachment", "Lycra Feeding Units", "Yarn Input Measuring Device", "Central Stitch System"],
+    },
+    formProductName: "Auto Stripper Jersey Circular Knitting Machine",
+  },
+  {
+    slug: "shearing-circular-knitting",
+    breadcrumbCategoryLabel: "Circular Knitting Machine",
+    breadcrumbSubcategory: "Shearing Circular Knitting Machine",
+    intro:
+      "Shearing circular knitting machine with an integrated blade that trims the pile loop during knitting itself. Perfect in shearing function, the machine heart emphasizes not only stability and high efficiency but also a combination of modern and traditional plush-knitting style.",
+    highlights: [
+      "Built-in shearing blade cuts pile loops during knitting, avoiding a separate finishing step",
+      "Produces plush, even-pile velour and towel-style fabrics",
+      "Advanced equipment support",
+      "High standard quality control",
+      "Multiple optional devices",
+    ],
+    application: {
+      title: "What can I do with YONTHIN circular knitting machine?",
+      body: "Imagination is infinite, as long as you can imagine, you can knit. Use Yonthin's sheared pile fabric to make soft towels, robes, blankets, and plush sportswear linings.",
+      image: imgKnittingMachineShearingExtraApplication.src,
+    },
+    engineering: {
+      title: "Why is it good at knitting?",
+      subtitle: knittingEngineeringSubtitle,
+      items: standardEngineeringItems,
+    },
+    valueItems: valuePillars,
+    valueSectionTitle: "Core Machine Advantages",
+    productFeatures: [
+      "Integrated shearing blade trims yarn loops into short, even plush pile as the fabric is knitted.",
+      "Cutting the pile in-line reduces material waste compared to a separate finishing shear process.",
+      "All cams and cam boxes are made of imported alloy steel, engraved and abraded by a CNC processing center.",
+      "Strong interchangeability with easy heart-part replacement for different pile heights.",
+      "Compatible with cotton, synthetic fiber, blending, silk, and artificial wool yarns.",
+      "Compact frame suited for towels, robes, and sportswear lining production.",
+    ],
+    parameters: {
+      rowKey: "diameter",
+      columns: knittingParamColumns,
+      rows: [
+        { diameter: "9\"-24\" (YX-HS-MN)", feeders: "27F-72F", gauge: "18G-28G", rpm: "18-25 R.P.M" },
+        { diameter: "8\"-24\" (YX-HD-MN)", feeders: "8F-48F", gauge: "16G-28G", rpm: "18-25 R.P.M" },
+      ],
+    },
+    equipmentMatrix: {
+      standard: standardEquipment,
+      optional: ["Lycra Attachment", "Yarn Input Measuring Device", "Central Stitch System"],
+    },
+    formProductName: "Shearing Circular Knitting Machine",
+  },
+  {
+    slug: "scuba-knitting",
+    breadcrumbCategoryLabel: "Circular Knitting Machine",
+    breadcrumbSubcategory: "Scuba Knitting Machine",
+    intro:
+      "This model is exclusively designed for scuba fabric. It uses a newly developed needle, heart, and triangle paired with a customized yarn nozzle for more precise control over yarn weaving.",
+    highlights: [
+      "Wraps cotton yarn on both faces around a black polyester core",
+      "Double-sided spandex coverage for enhanced elasticity and stretchability",
+      "Produces smooth, stable, neoprene-look double-knit fabric",
+      "Advanced equipment support",
+      "High standard quality control",
+      "Multiple optional devices",
+    ],
+    application: {
+      title: "What can I do with YONTHIN circular knitting machine?",
+      body: "Imagination is infinite, as long as you can imagine, you can knit. Use Yonthin's scuba fabric to make structured dresses, jackets, skirts, and sportswear with a smooth, stable, neoprene-look finish.",
+      image: imgKnittingMachineScubaExtraApplication.src,
+    },
+    engineering: {
+      title: "Why is it good at knitting?",
+      subtitle: knittingEngineeringSubtitle,
+      items: standardEngineeringItems,
+    },
+    valueItems: valuePillars,
+    valueSectionTitle: "Core Machine Advantages",
+    productFeatures: [
+      "Custom-developed needle, heart, and triangle designed specifically for scuba fabric.",
+      "Customized yarn nozzle precisely controls how cotton and polyester yarns weave together.",
+      "Perfectly wraps black polyester yarn with cotton yarn on both sides of the fabric.",
+      "Double-sided spandex coverage gives the fabric better elasticity and stretch recovery.",
+      "All cams and cam boxes are made of imported alloy steel, engraved and abraded by a CNC processing center.",
+      "Compatible with cotton, black polyester, and white/black lycra yarns.",
+    ],
+    parameters: {
+      rowKey: "diameter",
+      columns: knittingParamColumns,
+      rows: [
+        { diameter: "30\"-38\" (YX-SB)", feeders: "72F-96F", gauge: "24G", rpm: "18-25 R.P.M" },
+      ],
+    },
+    equipmentMatrix: {
+      standard: standardEquipment,
+      optional: ["Lycra Attachment", "Yarn Input Measuring Device", "Central Stitch System"],
+    },
+    formProductName: "Scuba Knitting Machine",
+  },
+  {
+    slug: "small-size-knitting",
+    breadcrumbCategoryLabel: "Circular Knitting Machine",
+    breadcrumbSubcategory: "High Speed Small Size Single/Double Jersey Knitting Machine",
+    intro:
+      "High speed small-diameter single/double jersey circular knitting machine built for narrow-tube fabrics such as socks, ribbed cuffs, collars, and gloves, using the same precision cam system and CNC-machined components as YONTHIN's larger circular machines.",
+    highlights: [
+      "Compact small-diameter frame for narrow-tube knitwear",
+      "Produces socks, ribbed cuffs, collars, and gloves",
+      "Single and double jersey (cylinder and dial) configurations available",
+      "Advanced equipment support",
+      "High standard quality control",
+    ],
+    application: {
+      title: "What can I do with YONTHIN circular knitting machine?",
+      body: "Imagination is infinite, as long as you can imagine, you can knit. Use Yonthin's small-diameter machine to make socks, ribbed cuffs, collars, and gloves.",
+      image: imgKnittingMachineSmallSizeExtraApplication.src,
+    },
+    engineering: {
+      title: "Why is it good at knitting?",
+      subtitle: knittingEngineeringSubtitle,
+      items: standardEngineeringItems,
+    },
+    valueItems: valuePillars,
+    valueSectionTitle: "Core Machine Advantages",
+    productFeatures: [
+      "Compact small-diameter frame purpose-built for narrow-tube fabrics.",
+      "Same CNC-machined cam and needle system as YONTHIN's larger circular knitting machines.",
+      "Single and double jersey (cylinder and dial) configurations available.",
+      "Compact footprint suited for high-mix, small-batch production runs alongside larger lines.",
+      "Compatible with cotton, synthetic fiber, blending, and lycra yarns.",
+    ],
+    parameters: {
+      rowKey: "diameter",
+      columns: knittingParamColumns,
+      rows: [
+        { diameter: "6\"-12\"", feeders: "12F-24F", gauge: "6G-20G", rpm: "20-40 R.P.M" },
+      ],
+    },
+    equipmentMatrix: {
+      standard: standardEquipment,
+      optional: ["Lycra Attachment", "Yarn Input Measuring Device"],
+    },
+    formProductName: "High Speed Small Size Single/Double Jersey Knitting Machine",
   },
 ];
 

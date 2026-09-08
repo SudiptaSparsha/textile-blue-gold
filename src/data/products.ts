@@ -5,9 +5,15 @@ import chenilleImgObj from "@/assets/product-chenille.png";
 import generatorImgObj from "@/assets/generators/cummins/cummins-c55d5/cummins-c55d5-1.jpg";
 import perkinsDieselImgObj from "@/assets/generators/perkins/perkins-diesel-generator/perkins-diesel-generator-1.jpg";
 import perkinsNaturalGasImgObj from "@/assets/generators/perkins/perkins-natural-gas-generator/perkins-natural-gas-generator-1.png";
+import fmwTbg30_50ImgObj from "@/assets/generators/fmw-tbg/fmw-tbg-30kw-50kw/fmw-tbg-30kw-50kw-1.png";
+import fmwTbg64_120ImgObj from "@/assets/generators/fmw-tbg/fmw-tbg-64kw-120kw/fmw-tbg-64kw-120kw-1.png";
+import fmwTbg75_120ImgObj from "@/assets/generators/fmw-tbg/fmw-tbg-75kw-120kw/fmw-tbg-75kw-120kw-1.png";
+import fmwTbg100_200ImgObj from "@/assets/generators/fmw-tbg/fmw-tbg-100kw-200kw/fmw-tbg-100kw-200kw-1.png";
+import fmwTbg120_200ImgObj from "@/assets/generators/fmw-tbg/fmw-tbg-120kw-200kw/fmw-tbg-120kw-200kw-1.png";
+import tbgBrandDieselImgObj from "@/assets/generators/fmw-tbg/tbg-brand-diesel-generator/tbg-brand-diesel-generator-1.jpg";
 import embroideryCategoryImgObj from "@/assets/embroidery-machine/yx-g-high-speed-flat-embroidery-machine/yx-g-high-speed-flat-embroidery-machine-4.jpg";
 import knittingCategoryImgObj from "@/assets/knitting-machine/high-speed-open-width-knitting-machine/high-speed-open-width-knitting-machine-1.jpg";
-import compressorCategoryImgObj from "@/assets/air-compressor/e-series/e-series-1.jpg";
+import compressorCategoryImgObj from "@/assets/air-compressor/category/air-compressor-lineup.png";
 
 const compressorImg = compressorImgObj.src;
 const knittingImg = knittingImgObj.src;
@@ -16,6 +22,12 @@ const chenilleImg = chenilleImgObj.src;
 const generatorImg = generatorImgObj.src;
 const perkinsDieselImg = perkinsDieselImgObj.src;
 const perkinsNaturalGasImg = perkinsNaturalGasImgObj.src;
+const fmwTbg30_50Img = fmwTbg30_50ImgObj.src;
+const fmwTbg64_120Img = fmwTbg64_120ImgObj.src;
+const fmwTbg75_120Img = fmwTbg75_120ImgObj.src;
+const fmwTbg100_200Img = fmwTbg100_200ImgObj.src;
+const fmwTbg120_200Img = fmwTbg120_200ImgObj.src;
+const tbgBrandDieselImg = tbgBrandDieselImgObj.src;
 const embroideryCategoryImg = embroideryCategoryImgObj.src;
 const knittingCategoryImg = knittingCategoryImgObj.src;
 const compressorCategoryImg = compressorCategoryImgObj.src;
@@ -67,7 +79,7 @@ export const categories: ProductCategory[] = [
     slug: "knitting-machines",
     description: "Advanced circular and flat knitting machinery for seamless and high-quality fabric manufacturing",
     image: knittingCategoryImg,
-    productCount: 7,
+    productCount: 11,
   },
   {
     name: "Embroidery Machines",
@@ -81,14 +93,14 @@ export const categories: ProductCategory[] = [
     slug: "air-compressors",
     description: "Reliable industrial air supply systems for consistent garment factory operations",
     image: compressorCategoryImg,
-    productCount: 68,
+    productCount: 70,
   },
   {
     name: "Generators",
     slug: "generators",
-    description: "Imported Cummins and Perkins diesel generators for dependable standby and prime power across Bangladesh",
+    description: "Imported Cummins, Perkins, and FMW/TBG diesel generators for dependable standby and prime power across Bangladesh",
     image: generatorImg,
-    productCount: 16,
+    productCount: 22,
   },
 ];
 
@@ -541,6 +553,126 @@ export const products: Product[] = [
       { diameter: "88-inch", feeders: "3-system", gauge: "16G", rpm: "1.6m/s" },
       { diameter: "88-inch", feeders: "3-system", gauge: "18G", rpm: "1.6m/s" },
     ],
+  },
+  {
+    id: "501",
+    name: "Auto Stripper Jersey Circular Knitting Machine",
+    slug: "auto-stripper-jersey-knitting",
+    category: "Knitting Machines",
+    categorySlug: "knitting-machines",
+    image: knittingImg,
+    shortDescription: "Automatic color-striping circular knitting machine for striped fleece, velvet, and jacquard-look fabrics",
+    description: "Knits 3:1 and 2:1 automatic striped fleece and plain fleece fabrics for sportswear, underwear, and pajama fabrics, plus uncut and loop velvet, brushed felt, and Lycra spring fabric.",
+    fullDescription: "The YONTHIN Auto Stripper Jersey Circular Knitting Machine uses a programmable ring of yarn-carrier fingers to automatically switch between multiple yarn colors while knitting, producing striped fleece, chromspun electron velvet, double brushed poodle cloth, and colorful polyester fabrics without manual yarn changes. By swapping heart parts, it can also be converted to a three-thread fleece or terry machine, giving factories a single frame that covers several striped and pile fabric types.",
+    specifications: {
+      "Feeders": "3:1 / 2:1 stripe ratio",
+      "RPM": "18 - 25 R.P.M",
+      "Gauge": "18G - 28G",
+      "Diameter": "30\" - 38\"",
+    },
+    features: [
+      "Automatic multi-color yarn striping without manual yarn changes",
+      "Knits uncut velvet, loop velvet, brushed felt, and poodle cloth",
+      "Convertible to single jersey, three-thread fleece, or terry by changing heart parts",
+      "Suited for sportswear, underwear, and pajama fabric production",
+      "Compatible with cotton, synthetic fiber, blending, silk, and artificial wool yarns",
+      "Compact frame with precision CNC-machined cam system"
+    ],
+    knittingParameters: [
+      { diameter: "30\"-38\" (YX-HS-C6)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25" },
+      { diameter: "30\"-38\" (YX-HS-C4)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25" },
+      { diameter: "30\"-38\" (YX-HD-C6)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25" },
+      { diameter: "30\"-38\" (YX-HD-C4)", feeders: "48F-60F", gauge: "18G-28G", rpm: "18-25" },
+    ],
+    optionalDevices: ["Lycra Attachment", "Lycra Feeding Units", "Yarn Input Measuring Device", "Central Stitch System"],
+  },
+  {
+    id: "502",
+    name: "Shearing Circular Knitting Machine",
+    slug: "shearing-circular-knitting",
+    category: "Knitting Machines",
+    categorySlug: "knitting-machines",
+    image: knittingImg,
+    shortDescription: "Integrated pile-shearing circular knitting machine for plush velour and towel-style fabrics",
+    description: "Knits and shears pile fabric in one pass — a built-in blade trims yarn loops during knitting for stable, high-efficiency plush fabric production in a modern, compact frame.",
+    fullDescription: "The YONTHIN Shearing Circular Knitting Machine combines a precision-engineered heart with an integrated shearing blade that trims the pile loop as it is knitted, avoiding the fabric waste and extra finishing step of a separate cutting process. Perfect in shearing function, the machine emphasizes both stability and high efficiency while combining modern and traditional plush-knitting styles, producing soft, even-pile fabrics for towels, robes, and sportswear linings.",
+    specifications: {
+      "Feeders": "8F - 72F",
+      "RPM": "18 - 25 R.P.M",
+      "Gauge": "16G - 28G",
+      "Diameter": "8\" - 24\"",
+    },
+    features: [
+      "Integrated shearing blade trims pile loops during knitting, reducing fabric waste",
+      "Produces plush, even-pile velour and towel-style fabrics",
+      "Combines modern precision engineering with traditional plush-knitting stability",
+      "High working efficiency for continuous production runs",
+      "Compatible with cotton, synthetic fiber, blending, silk, and artificial wool yarns",
+      "Compact frame suited for towels, robes, and sportswear lining production"
+    ],
+    knittingParameters: [
+      { diameter: "9\"-24\" (YX-HS-MN)", feeders: "27F-72F", gauge: "18G-28G", rpm: "18-25" },
+      { diameter: "8\"-24\" (YX-HD-MN)", feeders: "8F-48F", gauge: "16G-28G", rpm: "18-25" },
+    ],
+    optionalDevices: ["Lycra Attachment", "Yarn Input Measuring Device", "Central Stitch System"],
+  },
+  {
+    id: "503",
+    name: "Scuba Knitting Machine",
+    slug: "scuba-knitting",
+    category: "Knitting Machines",
+    categorySlug: "knitting-machines",
+    image: knittingImg,
+    shortDescription: "Double-sided circular knitting machine purpose-built for scuba (neoprene-look) health cloth",
+    description: "Exclusively designed for scuba fabric — wraps cotton yarn on both faces around a black polyester core with double-sided spandex coverage for a smooth, stable, stretchy double-knit.",
+    fullDescription: "The YONTHIN Scuba Knitting Machine uses a newly developed needle, heart, and triangle paired with a customized yarn nozzle for precise control over yarn weaving. This lets the machine perfectly wrap black polyester yarn with cotton yarn on both sides while achieving double-sided spandex coverage, producing a dense double-knit \"health cloth\" with a smooth, stable face and enhanced elasticity — the neoprene-look scuba fabric used in structured dresses, jackets, and sportswear.",
+    specifications: {
+      "Feeders": "72F - 96F",
+      "RPM": "18 - 25 R.P.M",
+      "Gauge": "24G",
+      "Diameter": "30\" - 38\"",
+    },
+    features: [
+      "Custom-developed needle, heart, triangle, and yarn nozzle exclusive to scuba fabric",
+      "Wraps cotton yarn on both faces around a black polyester core",
+      "Double-sided spandex coverage for enhanced elasticity and stretch recovery",
+      "Produces smooth, stable, neoprene-look double-knit fabric",
+      "Suited for structured dresses, jackets, and sportswear fabric production",
+      "Compatible with cotton, black polyester, and white/black lycra yarns"
+    ],
+    knittingParameters: [
+      { diameter: "30\"-38\" (YX-SB)", feeders: "72F-96F", gauge: "24G", rpm: "18-25" },
+    ],
+    optionalDevices: ["Lycra Attachment", "Yarn Input Measuring Device", "Central Stitch System"],
+  },
+  {
+    id: "504",
+    name: "High Speed Small Size Single/Double Jersey Knitting Machine",
+    slug: "small-size-knitting",
+    category: "Knitting Machines",
+    categorySlug: "knitting-machines",
+    image: knittingImg,
+    shortDescription: "Compact small-diameter circular knitting machine for socks, cuffs, and narrow-tube fabric",
+    description: "High speed small-diameter single/double jersey knitting machine for socks, ribbed cuffs, gloves, and other narrow-tube knitwear.",
+    fullDescription: "The YONTHIN High Speed Small Size Single/Double Jersey Knitting Machine brings the same precision cam system and CNC-machined components used across the YONTHIN range down to a compact small-diameter frame, purpose-built for narrow-tube fabrics such as socks, ribbed cuffs, collars, and gloves. Its smaller footprint suits factories running high-mix, small-batch production alongside larger circular knitting lines.",
+    specifications: {
+      "Feeders": "12F - 24F",
+      "RPM": "20 - 40 R.P.M",
+      "Gauge": "6G - 20G",
+      "Diameter": "6\" - 12\"",
+    },
+    features: [
+      "Compact small-diameter frame for narrow-tube knitwear",
+      "Produces socks, ribbed cuffs, collars, and gloves",
+      "Single and double jersey (cylinder and dial) configurations available",
+      "Same CNC-machined cam and needle system as YONTHIN's larger circular machines",
+      "Compact footprint suited for high-mix, small-batch production runs",
+      "Compatible with cotton, synthetic fiber, blending, and lycra yarns"
+    ],
+    knittingParameters: [
+      { diameter: "6\"-12\"", feeders: "12F-24F", gauge: "6G-20G", rpm: "20-40" },
+    ],
+    optionalDevices: ["Lycra Attachment", "Yarn Input Measuring Device"],
   },
   {
     id: "6",
@@ -2191,6 +2323,57 @@ export const products: Product[] = [
     ],
   },
   {
+    id: "701",
+    name: "LUOWEL Single Stage PM-VSD Screw Compressor",
+    slug: "luowel-pm-vsd-screw-compressor",
+    category: "Air Compressors",
+    categorySlug: "air-compressors",
+    brand: "LUOWEL",
+    image: compressorImg,
+    shortDescription: "Single-stage permanent magnet variable speed drive screw compressor for energy-efficient compressed air",
+    description: "LUOWEL Single Stage PM-VSD Screw Compressor uses a permanent magnet motor and variable frequency drive to match air output to demand, cutting energy costs versus fixed-speed compressors.",
+    fullDescription: "The LUOWEL Single Stage PM-VSD Screw Compressor pairs a high-efficiency permanent magnet motor with variable frequency drive control to precisely match compressed air output to real-time demand. The large rotor and balanced length-to-diameter ratio give high gas output at low rotational speed, for low vibration, low noise, and stable long-term operation. IP54, Class B temperature rise construction suits heavy dust and high-temperature factory environments.",
+    specifications: {
+      "Working Power": "22 - 75 kW (30 - 100 HP)",
+      "Free Air Delivery": "0.8 - 13.3 m³/min",
+      "Working Pressure": "7 / 8 / 10 bar",
+      "Motor": "Permanent magnet, variable frequency drive",
+      "Protection": "IP54, Class B temperature rise",
+    },
+    features: [
+      "Permanent magnet motor with VFD for precise, demand-matched air output",
+      "Up to 30-40% energy savings versus fixed-speed screw compressors",
+      "Large rotor with balanced length-to-diameter ratio for low-speed, low-noise operation",
+      "Full side-opening cabinet for easy maintenance access",
+      "IP54, Class B temperature rise rating for heavy dust and high-temperature environments",
+      "Suited to manufacturing, automotive, and food processing applications"
+    ],
+  },
+  {
+    id: "702",
+    name: "Refrigerated Compressed Air Dryer",
+    slug: "refrigerated-air-dryer",
+    category: "Air Compressors",
+    categorySlug: "air-compressors",
+    image: compressorImg,
+    shortDescription: "Refrigerated air dryer for removing moisture from compressed air supply lines",
+    description: "Refrigerated compressed air dryer that cools incoming air to condense and remove moisture, protecting downstream pneumatic tools, valves, and machinery from water damage.",
+    fullDescription: "This refrigerated air dryer is designed to pair with screw and piston air compressors to remove moisture from the compressed air line before it reaches production equipment. Incoming air passes over a refrigerant coil that condenses water vapor, which is then drained away, delivering dry air that protects pneumatic tools, cylinders, and control valves from corrosion and water damage. Inlet and outlet pressure gauges let operators monitor pressure drop across the unit at a glance.",
+    specifications: {
+      "Function": "Refrigerated compressed air drying",
+      "Monitoring": "Inlet and outlet pressure gauges, power/run/fault indicators",
+      "Refrigerant Circuit": "Copper coil condenser with hermetic compressor",
+      "Installation": "Downstream of air compressor, upstream of air receiver or tools",
+    },
+    features: [
+      "Condenses and removes moisture from compressed air lines",
+      "Protects pneumatic tools, valves, and machinery from water damage and corrosion",
+      "Inlet/outlet pressure gauges for at-a-glance monitoring",
+      "Power, run, and fault indicator lights",
+      "Compact cabinet suited for factory floor installation"
+    ],
+  },
+  {
     id: "74",
     name: "Cummins C7.5D5P Diesel Generator",
     slug: "cummins-c7-5d5p",
@@ -2648,7 +2831,166 @@ export const products: Product[] = [
       "Automatic control and protection systems",
       "Suitable for hospitals, commercial buildings, and industrial facilities",
     ],
-  }
+  },
+  {
+    id: "601",
+    name: "FMW/TBG 30KW-50KW Open Type Diesel Generator",
+    slug: "fmw-tbg-30kw-50kw",
+    category: "Generators",
+    categorySlug: "generators",
+    brand: "FMW/TBG",
+    image: fmwTbg30_50Img,
+    shortDescription: "30-50KW open-type diesel generating set with base fueling and four-protection control",
+    description: "Compact open-type FMW/TBG generating set for small commercial and light industrial standby power, with automatic base fueling and four-way protection.",
+    fullDescription: "The FMW/TBG 30KW-50KW Open Type Diesel Generator pairs a compact diesel engine with a brushless alternator on a common steel base, built for small workshops, retail sites, and light commercial backup power. It includes automatic base fueling, four protections (water temperature, oil temperature, oil pressure, over speed), and is available with an optional soundproof canopy and ATS for automatic transfer on mains failure.",
+    specifications: {
+      "Power Range": "30 kW - 50 kW",
+      "Type": "Open Type (soundproof canopy optional)",
+      "Fuel": "Diesel",
+      "Protection": "Water temperature, oil temperature, oil pressure, over speed",
+      "Control": "Auto start with optional ATS",
+    },
+    features: [
+      "Automatic base fueling system",
+      "Four-way protection: water temperature, oil temperature, oil pressure, over speed",
+      "Optional soundproof canopy and automatic transfer switch (ATS)",
+      "Compact skid base for small commercial and light industrial sites",
+      "Reliable standby power for workshops and retail sites",
+    ],
+  },
+  {
+    id: "602",
+    name: "FMW/TBG 64KW-120KW Open Type Diesel Generator",
+    slug: "fmw-tbg-64kw-120kw",
+    category: "Generators",
+    categorySlug: "generators",
+    brand: "FMW/TBG",
+    image: fmwTbg64_120Img,
+    shortDescription: "64-120KW open-type diesel generating set for medium commercial standby power",
+    description: "Mid-size FMW/TBG generating set for medium commercial buildings and light industrial sites, with automatic base fueling and four-way protection.",
+    fullDescription: "The FMW/TBG 64KW-120KW Open Type Diesel Generator steps up to a larger diesel engine and alternator for medium commercial buildings, small factories, and multi-unit sites that need more standby headroom. It includes automatic base fueling, four protections (water temperature, oil temperature, oil pressure, over speed), and is available with an optional soundproof canopy and ATS for automatic transfer on mains failure.",
+    specifications: {
+      "Power Range": "64 kW - 120 kW",
+      "Type": "Open Type (soundproof canopy optional)",
+      "Fuel": "Diesel",
+      "Protection": "Water temperature, oil temperature, oil pressure, over speed",
+      "Control": "Auto start with optional ATS",
+    },
+    features: [
+      "Automatic base fueling system",
+      "Four-way protection: water temperature, oil temperature, oil pressure, over speed",
+      "Optional soundproof canopy and automatic transfer switch (ATS)",
+      "Heavy-duty steel skid base for continuous-duty operation",
+      "Suited to medium commercial buildings and small factories",
+    ],
+  },
+  {
+    id: "603",
+    name: "FMW/TBG 75KW-120KW Open Type Diesel Generator",
+    slug: "fmw-tbg-75kw-120kw",
+    category: "Generators",
+    categorySlug: "generators",
+    brand: "FMW/TBG",
+    image: fmwTbg75_120Img,
+    shortDescription: "75-120KW open-type diesel generating set for commercial and light industrial standby power",
+    description: "FMW/TBG generating set built around a higher-output diesel engine for commercial buildings and light industrial sites, with automatic base fueling and four-way protection.",
+    fullDescription: "The FMW/TBG 75KW-120KW Open Type Diesel Generator uses a higher-output diesel engine and brushless alternator for commercial buildings, hotels, and light industrial sites needing dependable standby capacity. It includes automatic base fueling, four protections (water temperature, oil temperature, oil pressure, over speed), and is available with an optional soundproof canopy and ATS for automatic transfer on mains failure.",
+    specifications: {
+      "Power Range": "75 kW - 120 kW",
+      "Type": "Open Type (soundproof canopy optional)",
+      "Fuel": "Diesel",
+      "Protection": "Water temperature, oil temperature, oil pressure, over speed",
+      "Control": "Auto start with optional ATS",
+    },
+    features: [
+      "Automatic base fueling system",
+      "Four-way protection: water temperature, oil temperature, oil pressure, over speed",
+      "Optional soundproof canopy and automatic transfer switch (ATS)",
+      "Dependable standby capacity for hotels and commercial buildings",
+      "Robust steel skid base for continuous-duty operation",
+    ],
+  },
+  {
+    id: "604",
+    name: "FMW/TBG 100KW-200KW Open Type Diesel Generator",
+    slug: "fmw-tbg-100kw-200kw",
+    category: "Generators",
+    categorySlug: "generators",
+    brand: "FMW/TBG",
+    image: fmwTbg100_200Img,
+    shortDescription: "100-200KW open-type diesel generating set for larger commercial and industrial standby power",
+    description: "FMW/TBG generating set with a turbocharged multi-cylinder diesel engine for larger factories and commercial sites, with automatic base fueling and four-way protection.",
+    fullDescription: "The FMW/TBG 100KW-200KW Open Type Diesel Generator is built around a turbocharged multi-cylinder diesel engine and large-frame alternator for larger factories, hospitals, and commercial complexes. It includes automatic base fueling, four protections (water temperature, oil temperature, oil pressure, over speed), and is available with an optional soundproof canopy and ATS for automatic transfer on mains failure.",
+    specifications: {
+      "Power Range": "100 kW - 200 kW",
+      "Type": "Open Type (soundproof canopy optional)",
+      "Fuel": "Diesel",
+      "Protection": "Water temperature, oil temperature, oil pressure, over speed",
+      "Control": "Auto start with optional ATS",
+    },
+    features: [
+      "Turbocharged multi-cylinder diesel engine for higher output density",
+      "Automatic base fueling system",
+      "Four-way protection: water temperature, oil temperature, oil pressure, over speed",
+      "Optional soundproof canopy and automatic transfer switch (ATS)",
+      "Suited to larger factories, hospitals, and commercial complexes",
+    ],
+  },
+  {
+    id: "605",
+    name: "FMW/TBG 120KW-200KW Open Type Diesel Generator",
+    slug: "fmw-tbg-120kw-200kw",
+    category: "Generators",
+    categorySlug: "generators",
+    brand: "FMW/TBG",
+    image: fmwTbg120_200Img,
+    shortDescription: "120-200KW open-type diesel generating set for demanding industrial standby power",
+    description: "FMW/TBG generating set with a high-output turbocharged diesel engine for demanding industrial and commercial standby power needs, with automatic base fueling and four-way protection.",
+    fullDescription: "The FMW/TBG 120KW-200KW Open Type Diesel Generator pairs a high-output turbocharged diesel engine with a heavy-duty alternator for demanding industrial sites, large commercial complexes, and telecom facilities. It includes automatic base fueling, four protections (water temperature, oil temperature, oil pressure, over speed), and is available with an optional soundproof canopy and ATS for automatic transfer on mains failure.",
+    specifications: {
+      "Power Range": "120 kW - 200 kW",
+      "Type": "Open Type (soundproof canopy optional)",
+      "Fuel": "Diesel",
+      "Protection": "Water temperature, oil temperature, oil pressure, over speed",
+      "Control": "Auto start with optional ATS",
+    },
+    features: [
+      "High-output turbocharged diesel engine",
+      "Automatic base fueling system",
+      "Four-way protection: water temperature, oil temperature, oil pressure, over speed",
+      "Optional soundproof canopy and automatic transfer switch (ATS)",
+      "Suited to demanding industrial sites and large commercial complexes",
+    ],
+  },
+  {
+    id: "606",
+    name: "TBG Brand Diesel Generator – England-China",
+    slug: "tbg-brand-diesel-generator",
+    category: "Generators",
+    categorySlug: "generators",
+    brand: "FMW/TBG",
+    image: tbgBrandDieselImg,
+    shortDescription: "10 kW – 400 kW diesel generators engineered to British design standards and manufactured in China",
+    description: "TBG Brand Diesel Generators combine British engineering and design standards with cost-efficient, high-volume manufacturing in China, giving commercial and industrial customers in Bangladesh a dependable, budget-friendly standby power option.",
+    fullDescription: "Developed to British (England) engineering and design standards and manufactured at scale in China, TBG Brand Diesel Generators are built to give budget-conscious commercial and industrial customers a dependable, easy-to-service alternative to premium Western-built generator sets. Each unit pairs a heavy-duty diesel engine with a brushless, self-excited alternator on a rigid steel base frame, and is available in open-skid or soundproof-canopy configurations. With power outputs spanning 10 kW to 400 kW, the range covers everything from small workshop backup power to full industrial standby duty.",
+    specifications: {
+      "Power Range": "10 kW – 400 kW",
+      "Engineering Standard": "British (England) design standards",
+      "Manufactured In": "China",
+      "Fuel": "Diesel",
+      "Type": "Open type (soundproof canopy optional)",
+      "Frequency": "50 Hz",
+      "Control": "Auto start with optional ATS",
+    },
+    features: [
+      "Engineered to British design and quality standards, manufactured in China for cost efficiency",
+      "Heavy-duty diesel engine paired with a brushless, self-excited alternator",
+      "Rigid steel base frame with open-skid or soundproof canopy configurations",
+      "Automatic start control with optional automatic transfer switch (ATS)",
+      "Wide power range covering light commercial to full industrial standby duty",
+      "Straightforward maintenance with wide parts availability",
+    ],
+  },
 ];
 
 export const getProductsByCategory = (categorySlug: string) =>

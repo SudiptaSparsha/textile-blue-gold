@@ -98,6 +98,10 @@ import z003681 from "@/assets/air-compressor/z-0-036-8/z-0-036-8-1.jpg";
 import w111251 from "@/assets/air-compressor/w-1-1-12-5/w-1-1-12-5-1.jpg";
 import w0801251x1 from "@/assets/air-compressor/w-0-80-12-5/w-0-80-12-5-1.jpg";
 import v0401251x1 from "@/assets/air-compressor/v-0-40-12-5/v-0-40-12-5-1.jpg";
+import luowelPmVsd1 from "@/assets/air-compressor/luowel-pm-vsd-screw-compressor/luowel-pm-vsd-screw-compressor-1.png";
+import luowelPmVsd2 from "@/assets/air-compressor/luowel-pm-vsd-screw-compressor/luowel-pm-vsd-screw-compressor-2.png";
+import refrigeratedAirDryer1 from "@/assets/air-compressor/refrigerated-air-dryer/refrigerated-air-dryer-1.png";
+import refrigeratedAirDryer2 from "@/assets/air-compressor/refrigerated-air-dryer/refrigerated-air-dryer-2.png";
 
 import type { GalleryImage } from "@/data/embroideryImages";
 
@@ -176,6 +180,8 @@ export const compressorGalleryImages: Record<string, GalleryImage[]> = {
   "w-1-1-12-5": toGallery("W-1.1/12.5", [w111251]),
   "w-0-80-12-5": toGallery("W-0.80/12.5", [w0801251x1]),
   "v-0-40-12-5": toGallery("V-0.40/12.5", [v0401251x1]),
+  "luowel-pm-vsd-screw-compressor": toGallery("LUOWEL Single Stage PM-VSD Screw Compressor", [luowelPmVsd1, luowelPmVsd2]),
+  "refrigerated-air-dryer": toGallery("Refrigerated Compressed Air Dryer", [refrigeratedAirDryer1, refrigeratedAirDryer2]),
 };
 
 export const getCompressorGalleryImages = (slug: string): GalleryImage[] =>

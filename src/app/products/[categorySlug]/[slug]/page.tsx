@@ -3,7 +3,7 @@ import { ArrowLeft, CheckCircle } from "lucide-react";
 import PageBanner from "@/components/PageBanner";
 import SectionWrapper from "@/components/SectionWrapper";
 import { getProductBySlug, categories } from "@/data/products";
-import { getMachineBreadcrumbs, getMachineDetailContent, isMachineDetailPage } from "@/data/machineDetail";
+import { getMachineBreadcrumbs, getMachineDetailContent, getMachineGalleryImages, isMachineDetailPage } from "@/data/machineDetail";
 import MachineDetailPage from "@/components/products/MachineDetailPage";
 import ProductImagePopup from "@/components/products/ProductImagePopup";
 
@@ -29,6 +29,8 @@ export default async function ProductDetail({ params }: { params: Promise<{ cate
   const machineDetail = isMachineDetailPage(product.slug);
   const machineContent = getMachineDetailContent(product.slug);
   const machineBreadcrumbs = getMachineBreadcrumbs(product.slug, product.name, product.categorySlug);
+  const gallery = getMachineGalleryImages(product.slug);
+  const displayImages = gallery.length > 0 ? gallery : [{ src: product.image, alt: product.name }];
 
   return (
     <>
@@ -56,7 +58,7 @@ export default async function ProductDetail({ params }: { params: Promise<{ cate
 
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="overflow-hidden rounded-lg border border-border bg-muted">
-            <ProductImagePopup src={product.image} alt={product.name} title={product.name} />
+            <ProductImagePopup images={displayImages} title={product.name} />
           </div>
 
           <div>
