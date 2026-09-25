@@ -31,7 +31,7 @@ const fmwTbg120_200Img = fmwTbg120_200ImgObj.src;
 const tbgBrandDieselImg = tbgBrandDieselImgObj.src;
 const embroideryCategoryImg = embroideryCategoryImgObj.src;
 const knittingCategoryImg = knittingCategoryImgObj.src;
-const knittingCategoryImg1 = knittingCategoryImgOb1.src;
+const knittingCategoryImg2 = knittingCategoryImgOb1.src;
 const compressorCategoryImg = compressorCategoryImgObj.src;
 
 export interface Product {
@@ -80,7 +80,7 @@ export const categories: ProductCategory[] = [
     name: "Knitting Machines",
     slug: "knitting-machines",
     description: "Advanced circular and flat knitting machinery for seamless and high-quality fabric manufacturing",
-    image: knittingCategoryImg1,
+    image: knittingCategoryImg2,
     productCount: 11,
   },
   {
