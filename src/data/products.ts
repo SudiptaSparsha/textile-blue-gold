@@ -13,6 +13,7 @@ import fmwTbg120_200ImgObj from "@/assets/generators/fmw-tbg/fmw-tbg-120kw-200kw
 import tbgBrandDieselImgObj from "@/assets/generators/fmw-tbg/tbg-brand-diesel-generator/tbg-brand-diesel-generator-1.jpg";
 import embroideryCategoryImgObj from "@/assets/embroidery-machine/yx-g-high-speed-flat-embroidery-machine/yx-g-high-speed-flat-embroidery-machine-4.jpg";
 import knittingCategoryImgObj from "@/assets/knitting-machine/high-speed-open-width-knitting-machine/high-speed-open-width-knitting-machine-1.jpg";
+import knittingCategoryImgOb1 from "@/assets/knitting-machine/high-speed-open-width-knitting-machine/knitting_machines.jpeg";
 import compressorCategoryImgObj from "@/assets/air-compressor/category/air-compressor-lineup.png";
 
 const compressorImg = compressorImgObj.src;
@@ -30,6 +31,7 @@ const fmwTbg120_200Img = fmwTbg120_200ImgObj.src;
 const tbgBrandDieselImg = tbgBrandDieselImgObj.src;
 const embroideryCategoryImg = embroideryCategoryImgObj.src;
 const knittingCategoryImg = knittingCategoryImgObj.src;
+const knittingCategoryImg1 = knittingCategoryImgOb1.src;
 const compressorCategoryImg = compressorCategoryImgObj.src;
 
 export interface Product {
@@ -78,7 +80,7 @@ export const categories: ProductCategory[] = [
     name: "Knitting Machines",
     slug: "knitting-machines",
     description: "Advanced circular and flat knitting machinery for seamless and high-quality fabric manufacturing",
-    image: knittingCategoryImg,
+    image: knittingCategoryImg1,
     productCount: 11,
   },
   {
