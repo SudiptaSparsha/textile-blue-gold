@@ -3,11 +3,10 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { ArrowRight, Award, ChevronLeft, ChevronRight, Globe, Headphones, Truck } from "lucide-react";
-import aboutImgObj from "@/assets/about-us/Textile office.png";
-const aboutImg = aboutImgObj.src;
 import SectionWrapper, { SectionTitle } from "@/components/SectionWrapper";
 import ProductSearch from "@/components/ProductSearch";
 import ClientPhotoSlider from "@/components/ClientPhotoSlider";
+import OfficePhotoSlider from "@/components/OfficePhotoSlider";
 import { categories } from "@/data/products";
 import heroSlide1 from "@/assets/hero-slider/259666c3-7b6c-466e-ace2-0f1958bd2225.jpg";
 import heroSlide2 from "@/assets/hero-slider/84bf0ba8-f14b-481d-af09-5af3157fd093.jpg";
@@ -168,9 +167,7 @@ const Index = () => {
             </Link>
           </div>
 
-          <div className="overflow-hidden rounded-lg shadow-lg">
-            <img src={aboutImg} alt="Textile Blue Gold office" loading="lazy" className="h-full w-full object-cover" width={1200} height={600} />
-          </div>
+          <OfficePhotoSlider />
         </div>
       </SectionWrapper>
 

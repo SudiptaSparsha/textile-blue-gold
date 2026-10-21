@@ -3,6 +3,7 @@ import knittingImgObj from "@/assets/product-knitting.png";
 import embroideryImgObj from "@/assets/product-embroidery.png";
 import chenilleImgObj from "@/assets/product-chenille.png";
 import generatorImgObj from "@/assets/generators/cummins/cummins-c55d5/cummins-c55d5-1.jpg";
+import generatorCategoryImgObj from "@/assets/generators/components.jpg";
 import perkinsDieselImgObj from "@/assets/generators/perkins/perkins-diesel-generator/perkins-diesel-generator-1.jpg";
 import perkinsNaturalGasImgObj from "@/assets/generators/perkins/perkins-natural-gas-generator/perkins-natural-gas-generator-1.png";
 import fmwTbg30_50ImgObj from "@/assets/generators/fmw-tbg/fmw-tbg-30kw-50kw/fmw-tbg-30kw-50kw-1.png";
@@ -21,6 +22,7 @@ const knittingImg = knittingImgObj.src;
 const embroideryImg = embroideryImgObj.src;
 const chenilleImg = chenilleImgObj.src;
 const generatorImg = generatorImgObj.src;
+const generatorCategoryImg = generatorCategoryImgObj.src;
 const perkinsDieselImg = perkinsDieselImgObj.src;
 const perkinsNaturalGasImg = perkinsNaturalGasImgObj.src;
 const fmwTbg30_50Img = fmwTbg30_50ImgObj.src;
@@ -101,7 +103,7 @@ export const categories: ProductCategory[] = [
     name: "Generators",
     slug: "generators",
     description: "Imported Cummins, Perkins, and FMW/TBG diesel generators for dependable standby and prime power across Bangladesh",
-    image: generatorImg,
+    image: generatorCategoryImg,
     productCount: 22,
   },
 ];
